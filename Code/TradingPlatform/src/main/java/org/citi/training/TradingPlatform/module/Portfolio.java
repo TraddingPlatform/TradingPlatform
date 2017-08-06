@@ -4,7 +4,7 @@ public class Portfolio
 {
     private int id;
     private int traderId;
-    private int equityId;
+    private String equityId;
     private int amount;
     private Double price;
     public Portfolio ()
@@ -12,7 +12,7 @@ public class Portfolio
         super ();
         // TODO Auto-generated constructor stub
     }
-    public Portfolio (int id, int traderId, int equityId, int amount,
+    public Portfolio (int id, int traderId, String equityId, int amount,
         Double price)
     {
         super ();
@@ -38,11 +38,11 @@ public class Portfolio
     {
         this.traderId = traderId;
     }
-    public int getEquityId ()
+    public String getEquityId ()
     {
         return equityId;
     }
-    public void setEquityId (int equityId)
+    public void setEquityId (String equityId)
     {
         this.equityId = equityId;
     }
