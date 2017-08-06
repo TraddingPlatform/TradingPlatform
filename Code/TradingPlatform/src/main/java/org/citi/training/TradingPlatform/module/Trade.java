@@ -5,7 +5,7 @@ public class Trade
     private int id;
     private int traderId;
     private Double price;
-    private int equityId;
+    private String equityId;
     private boolean bnuy;
     private int amount;
     private String createtime;
@@ -14,7 +14,7 @@ public class Trade
         super ();
         // TODO Auto-generated constructor stub
     }
-    public Trade (int id, int traderId, Double price, int equityId,
+    public Trade (int id, int traderId, Double price, String equityId,
         boolean bnuy, int amount, String createtime)
     {
         super ();
@@ -50,11 +50,11 @@ public class Trade
     {
         this.price = price;
     }
-    public int getEquityId ()
+    public String getEquityId ()
     {
         return equityId;
     }
-    public void setEquityId (int equityId)
+    public void setEquityId (String equityId)
     {
         this.equityId = equityId;
     }
