@@ -1,0 +1,322 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<title>Login | Crawler Site</title>
+
+<link rel="canonical" href="https://www.crawlersite.com" />
+
+<link rel="apple-touch-icon" sizes="57x57"
+	href="https://www.crawlersite.com/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60"
+	href="https://www.crawlersite.com/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72"
+	href="https://www.crawlersite.com/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76"
+	href="https://www.crawlersite.com/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114"
+	href="https://www.crawlersite.com/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120"
+	href="https://www.crawlersite.com/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144"
+	href="https://www.crawlersite.com/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152"
+	href="https://www.crawlersite.com/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180"
+	href="https://www.crawlersite.com/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"
+	href="https://www.crawlersite.com/images/android-icon-192x192.png?v=2">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="https://www.crawlersite.com/images/favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="96x96"
+	href="https://www.crawlersite.com/images/favicon-96x96.png?v=2">
+<link rel="icon" type="image/png" sizes="16x16"
+	href="https://www.crawlersite.com/images/favicon-16x16.png?v=2">
+<link rel="manifest"
+	href="https://www.crawlersite.com/images/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage"
+	content="https://www.crawlersite.com/images/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="Crawler Site">
+<meta itemprop="description"
+	content="Easy way to truly understand your web and mobile site visitors">
+<meta itemprop="image"
+	content="https://www.crawlersite.com/images/FacebookBanner.jpg" />
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="&#64;Crawler Site">
+<meta name="twitter:title" content="Crawler Site">
+<meta name="twitter:description"
+	content="Easy way to truly understand your web and mobile site visitors">
+<meta name="twitter:creator" content="&#64;Flinger">
+<meta name="twitter:image"
+	content="https://www.crawlersite.com/images/FacebookBanner.jpg">
+<!-- Open Graph data -->
+<meta property="og:title" content="Crawler Site" />
+<meta property="og:type" content="product" />
+<meta property="og:url" content="https://www.crawlersite.com/" />
+<meta property="og:image"
+	content="https://www.crawlersite.com/images/FacebookBanner.jpg" />
+<meta property="og:description"
+	content="Easy way to truly understand your web and mobile site visitors" />
+<meta property="og:site_name" content="Crawler Site" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta
+	content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+	name='viewport' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<!--<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css" asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+            asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />-->
+
+<!-- CSS Files -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/paper-bootstrap-wizard.css" rel="stylesheet" />
+<link href="/css/animate.css" rel="stylesheet">
+<link href="/css/site.css" rel="stylesheet">
+
+<!-- CSS Just for demo purpose, don't include it in your project -->
+<link href=css/demo.css " rel="stylesheet" />
+
+<!-- Fonts and Icons -->
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href='css/css3.css' rel='stylesheet' type='text/css'>
+<link href="css/themify-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="css/dialog.css" />
+<link rel="stylesheet" type="text/css" href="css/MyStyles.css" />
+</head>
+
+<body>
+	<div class="image-container set-full-height">
+		<link rel="shortcut icon" href="images/cloud.png">
+		<a class="navbar-brand crawler-logo" href="/"><b class="app-name">Trading
+				Platform</b></a>
+
+		<!--   Big container   -->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-5 col-sm-offset-4 login-div">
+
+					<!--      Wizard container        -->
+					<div class="wizard-container">
+
+						<div class="card wizard-card plain-card animate-box"
+							data-animate-effect="fadeIn" data-color="red" id="wizardProfile">
+
+							<form class="auth-login" method="POST">
+
+
+								<div class="wizard-header text-center">
+									<h3 class="wizard-title uppercase">Sign In</h3>
+								</div>
+
+								<div class="wizard-navigation"></div>
+								<div class="tab-content">
+									<div class="tab-pane active" id="signin">
+
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="form-group login-form">
+													<label class="sr-only">UserName <small>(required)</small></label>
+													<input id="username-input" name="email" type="email"
+														class="form-control" placeholder="username (required)">
+												</div>
+											</div>
+											<div class="col-sm-12">
+												<div class="form-group login-form">
+													<label class="sr-only">Password <small>(required)</small></label>
+													<input id="password-input" name="password" type="password"
+														class="form-control " placeholder="password">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="wizard-footer ">
+									<div class="pull-right ">
+										<input type='submit'
+											class='btn btn-finish btn-danger2 login-btn' name='finish'
+											value='Login' />
+									</div>
+									Not registered? <a href="/Home/Register">Sign up</a> <br>
+									<!-- <a href="/Home/ResetAccount" class="footer-link">Forgot
+										Your Password?</a> -->
+									<div class="clearfix "></div>
+								</div>
+							</form>
+
+
+							<!---->
+						</div>
+					</div>
+					<!-- wizard container -->
+				</div>
+			</div>
+			<!-- end row -->
+		</div>
+		<!--  big container -->
+
+		<div class="footer ">
+			<div class="container text-center "></div>
+		</div>
+	</div>
+
+	<div id="dialog" class="dialog">
+		<div class="dialog__overlay"></div>
+		<div class="dialog__content">
+			<h2></h2>
+			<h4></h4>
+			<div></div>
+		</div>
+	</div>
+</body>
+
+
+<!--   Core JS Files   -->
+<script src="js/jquery-2.2.4.min.js" type="text/javascript "></script>
+<script src="js/bootstrap.min.js" type="text/javascript "></script>
+<script src="js/jquery.bootstrap.wizard.js" type="text/javascript "></script>
+<script src="js/jquery.waypoints.min.js"></script>
+
+<!--  Plugin for the Wizard -->
+<script src="/js/paper-bootstrap-wizard.js" type="text/javascript "></script>
+
+<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+<script src="js/jquery.validate.min.js" type="text/javascript "></script>
+
+<script src="/js/modernizr.custom.js"></script>
+<script src="/js/classie.js"></script>
+<script src="/js/dialogFx.js"></script>
+
+<script src="/js/main.js"></script>
+<script src="/js/sanitize_html.js"></script>
+<script src="/js/dialog.js"></script>
+
+<script src="/js/animate.js"></script>
+
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="0733d75f-901a-414f-88b3-42186a2919ae";(function(){d=document;s=d.createElement("script");s.src="js/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
+
+<script>
+		const SETTINGS = {
+			rebound: {
+				tension: 26,
+				friction: 10
+			},
+			spinner: {
+				id: 'spinner',
+				radius: 90,
+				sides: 3,
+				depth: 4,
+				colors: {
+					//background: '#231E76',
+					//stroke: '#231E76',
+					background: '#f0f0f0',
+					stroke: '#D61010',
+					base: null,
+					child: '#f1b3b3'
+				},
+				alwaysForward: true, // When false the spring will reverse normally.
+				restAt: 0.5, // A number from 0.1 to 0.9 || null for full rotation
+				renderBase: false
+			}
+		};
+		
+	</script>
+
+<script src="js/loader.js"></script>
+
+
+<script>
+    $('.auth-login').submit(function () {
+        $Flinger.Loader.Init();
+        var username = $("#username-input").val();
+        var password = $("#password-input").val();
+
+        var data = {
+            UserName: username,
+            Password: password
+        };
+
+        /* $.ajax({
+            url: "/User/GetByCredentials",
+            type: "POST",
+            data: data,
+            dataType: "json",
+            success: function (response) {
+                console.log(response)
+                if (response !== undefined) {
+                    if (response.result.Success !== undefined && response.result.Success !== false) {
+                        localStorage.setItem('auth_token', response.result.AuthToken);
+                        localStorage.setItem('userId', response.result.UserId);
+                        location.assign("/Dashboard?AuthToken="+ response.result.AuthToken);
+                    }
+                    else if (response.result.Success !== undefined && response.result.Success === false) {
+                        $Flinger.Dialog.SetData("Please check your credentials", response.result.Message);
+                        $Flinger.Loader.Finish()
+                    }
+                    else {
+                        $Flinger.Dialog.SetData("Something was wrong", "In this moment we have some problems, please try again in few moments.");
+                        $Flinger.Loader.Finish()
+                    }
+                }
+            },
+            error: function (xhr, status, error) {
+                switch (xhr.status) {
+                    case 500:
+                    default:
+                        $Flinger.Dialog.SetData(error, "In this moment we have some problems, please try again in few moments.");
+                        $Flinger.Loader.Finish()
+
+                }
+                console.log(error);
+            }
+        }); */
+
+        event.preventDefault();
+    })
+
+    /* var randomN = Math.floor((Math.random() * 8));
+
+    switch (randomN == 0 ? randomN + 1 : randomN) {
+        case 1:
+            $(".image-container").css('background-image','url(/register-assets/img/steps_background-1.jpg)');
+            break;
+        case 2:
+            $(".image-container").css('background-image','url(/register-assets/img/steps_background-2.jpg)');
+            break;
+        case 3:
+            $(".image-container").css('background-image','url(/register-assets/img/steps_background-3.jpg)');
+            break;
+        case 4:
+            $(".image-container").css('background-image','url(/register-assets/img/steps_background-4.jpg)');
+            break;
+        case 5:
+            $(".image-container").css('background-image','url(/register-assets/img/steps_background-5.jpg)');
+            break;
+        case 6:
+            $(".image-container").css('background-image','url(/register-assets/img/steps_background-6.jpg)');
+            break;
+        case 7:
+            $(".image-container").css('background-image','url(/register-assets/img/steps_background-7.jpg)');
+            break;
+        case 8:
+            $(".image-container").css('background-image','url(/register-assets/img/steps_background-8.jpg)');
+            break;
+        default:
+            $(".image-container").css('background-image','url(/register-assets/img/steps_background-1.jpg)');
+    } */
+</script>
+
+
+</html>
