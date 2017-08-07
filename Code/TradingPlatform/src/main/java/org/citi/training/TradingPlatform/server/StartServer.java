@@ -11,8 +11,6 @@ import com.sun.jersey.spi.container.servlet.ServletContainer;
 public class StartServer {
 	public static void main( String[] args ) throws Exception
     {
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("bean.xml");
-		
 		Server server=new Server(8080);
     	ServletHolder servlet = new ServletHolder(ServletContainer.class);
     	servlet.setInitParameter("com.sun.jersey.config.property.resourceConfigClass", 

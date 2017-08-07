@@ -16,8 +16,8 @@ public class SelectSpecifiedTraderServiceImp implements SelectSpecifiedTraderSer
     
 	public Trader getTrader(String traderId) {
 		@SuppressWarnings("unchecked")
-		List<Trader> list = jdbcTemplate.query("select * from trader where id = " + traderId ,
-										new TraderRowMapper());
+		List<Trader> list = jdbcTemplate.query("select * from trader where id = \"" 
+									+ traderId + "\"",new TraderRowMapper());
         return list.get(0);
 	}
 

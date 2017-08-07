@@ -6,24 +6,20 @@ import java.security.NoSuchAlgorithmException;
 
 import org.citi.training.TradingPlatform.module.trader.SelectSpecifiedTraderService;
 import org.citi.training.TradingPlatform.module.trader.Trader;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import sun.misc.BASE64Encoder;
 
 @SuppressWarnings("restriction")
-public class LoginManager {
+public class LoginManager implements Loginable{
 	
-	private SelectSpecifiedTraderService service;
-	private ApplicationContext ctx;
-	
-	public LoginManager() {
-		ctx = new ClassPathXmlApplicationContext("bean.xml");
-		service = (SelectSpecifiedTraderService) ctx.getBean("traderService");
+	private SelectSpecifiedTraderService selectSpecifiedTraderService;
+
+	public void setSelectSpecifiedTraderService(SelectSpecifiedTraderService selectSpecifiedTraderService) {
+		this.selectSpecifiedTraderService = selectSpecifiedTraderService;
 	}
-	
+
 	public boolean login(String traderId, String password) {
-		Trader trader = service.getTrader(traderId);
+		Trader trader = selectSpecifiedTraderService.getTrader(traderId);
 		String passwordEncoderByMd5 = encoderByMd5(password);
 		boolean result = trader.getPassword().equals(passwordEncoderByMd5);
 		return result;

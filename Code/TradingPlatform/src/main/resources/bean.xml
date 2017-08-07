@@ -38,14 +38,15 @@
         2.http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
         采用@Transaction注解方式使用事务管理器
-    -->
+    
     <tx:annotation-driven transaction-manager="txManager" />
-
-	<bean id="loginManager" class="org.citi.training.TradingPlatform.controller.LoginManager">
+	-->
+	<bean id="traderService" class="org.citi.training.TradingPlatform.module.trader.SelectSpecifiedTraderServiceImp">
+        <property name="dataSource" ref="dataSource"></property>
     </bean>
     
-    <bean id="traderService" class="org.citi.training.TradingPlatform.module.trader.SelectSpecifiedTraderServiceImp">
-        <property name="dataSource" ref="dataSource"></property>
+	<bean id="loginManager" class="org.citi.training.TradingPlatform.controller.LoginManager">
+    	<property name="selectSpecifiedTraderService" ref="traderService"></property>
     </bean>
     
 </beans>
