@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
-@Path("/calculateservice")
+@Path("/loginservice")
 @Component
 @Scope("request")
 public class LoginService {
@@ -21,20 +21,20 @@ public class LoginService {
 	
 	public LoginService() {
 		ctx = new ClassPathXmlApplicationContext("bean.xml");
-		loginManager = (Loginable) ctx.getBean("repoCalculator");
+		loginManager = (Loginable) ctx.getBean("loginManager");
 	}
 	
 	@GET
-	@Path("/dirtyprice")
+	@Path("/login")
 	@Produces("text/plain")
 	public String login(@QueryParam("traderId")String traderId, 
 						@QueryParam("password")String password) {
 		boolean success = loginManager.login(traderId, password);
 		if(success) {
-			return "";
+			return "true";
 		}
 		else {
-			return "";
+			return "false";
 		}
 	}
 }

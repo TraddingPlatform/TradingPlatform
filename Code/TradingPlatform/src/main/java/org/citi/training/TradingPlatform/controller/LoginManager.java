@@ -4,8 +4,8 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import org.citi.training.TradingPlatform.module.SelectSpecifiedTraderService;
-import org.citi.training.TradingPlatform.module.Trader;
+import org.citi.training.TradingPlatform.module.trader.SelectSpecifiedTraderService;
+import org.citi.training.TradingPlatform.module.trader.Trader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,7 +19,7 @@ public class LoginManager {
 	
 	public LoginManager() {
 		ctx = new ClassPathXmlApplicationContext("bean.xml");
-		service = (SelectSpecifiedTraderService) ctx.getBean("repoCalculator");
+		service = (SelectSpecifiedTraderService) ctx.getBean("traderService");
 	}
 	
 	public boolean login(String traderId, String password) {
