@@ -5,7 +5,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
-import org.citi.training.TradingPlatform.controller.LoginManager;
 import org.citi.training.TradingPlatform.controller.Loginable;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Scope;

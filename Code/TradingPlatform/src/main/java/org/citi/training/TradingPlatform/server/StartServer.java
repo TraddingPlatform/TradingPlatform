@@ -3,8 +3,6 @@ package org.citi.training.TradingPlatform.server;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.sun.jersey.spi.container.servlet.ServletContainer;
 
