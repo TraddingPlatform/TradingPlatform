@@ -10,7 +10,7 @@ public class TraderRowMapper implements RowMapper {
 
 	public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Trader trader = new Trader();
-		trader.setId(rs.getString("id"));
+		trader.setId(rs.getInt("id"));
 		trader.setPassword(rs.getString("password"));
 		trader.setName(rs.getString("name"));
 		trader.setEmail(rs.getString("email"));

@@ -27,9 +27,9 @@ public class LoginService {
 	@GET
 	@Path("/login")
 	@Produces("text/plain")
-	public String login(@QueryParam("traderId")String traderId, 
+	public String login(@QueryParam("traderName")String traderName, 
 						@QueryParam("password")String password) {
-		boolean success = loginManager.login(traderId, password);
+		boolean success = loginManager.login(traderName, password);
 		if(success) {
 			return "true";
 		}

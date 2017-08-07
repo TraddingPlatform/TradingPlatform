@@ -2,7 +2,7 @@ package org.citi.training.TradingPlatform.module.trader;
 
 public class Trader {
 	
-	private String id;
+	private int id;
 	private String name;
 	private String password;
 	private String email;
@@ -13,7 +13,7 @@ public class Trader {
         // TODO Auto-generated constructor stub
     }
     
-    public Trader (String id, String name, String password, String email)
+    public Trader (int id, String name, String password, String email)
     {
         super ();
         this.id = id;
@@ -21,11 +21,11 @@ public class Trader {
         this.password = password;
         this.email = email;
     }
-    public String getId ()
+    public int getId ()
     {
         return id;
     }
-    public void setId (String id)
+    public void setId (int id)
     {
         this.id = id;
     }

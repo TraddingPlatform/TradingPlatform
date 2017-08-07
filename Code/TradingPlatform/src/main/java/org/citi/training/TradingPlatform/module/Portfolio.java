@@ -2,8 +2,8 @@ package org.citi.training.TradingPlatform.module;
 
 public class Portfolio
 {
-    private String id;
-    private String traderId;
+    private int id;
+    private int traderId;
     private String equityId;
     private int amount;
     private Double price;
@@ -12,7 +12,7 @@ public class Portfolio
         super ();
         // TODO Auto-generated constructor stub
     }
-    public Portfolio (String id, String traderId, String equityId, int amount,
+    public Portfolio (int id, int traderId, String equityId, int amount,
         Double price)
     {
         super ();
@@ -22,19 +22,19 @@ public class Portfolio
         this.amount = amount;
         this.price = price;
     }
-    public String getId ()
+    public int getId ()
     {
         return id;
     }
-    public void setId (String id)
+    public void setId (int id)
     {
         this.id = id;
     }
-    public String getTraderId ()
+    public int getTraderId ()
     {
         return traderId;
     }
-    public void setTraderId (String traderId)
+    public void setTraderId (int traderId)
     {
         this.traderId = traderId;
     }

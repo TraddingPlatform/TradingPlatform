@@ -18,8 +18,11 @@ public class LoginManager implements Loginable{
 		this.selectSpecifiedTraderService = selectSpecifiedTraderService;
 	}
 
-	public boolean login(String traderId, String password) {
-		Trader trader = selectSpecifiedTraderService.getTrader(traderId);
+	public boolean login(String traderName, String password) {
+		Trader trader = selectSpecifiedTraderService.getTrader(traderName);
+		if(trader == null) {
+			return false;
+		}
 		String passwordEncoderByMd5 = encoderByMd5(password);
 		boolean result = trader.getPassword().equals(passwordEncoderByMd5);
 		return result;

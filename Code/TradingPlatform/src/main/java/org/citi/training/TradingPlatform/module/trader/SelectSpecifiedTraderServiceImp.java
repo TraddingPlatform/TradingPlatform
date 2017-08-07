@@ -14,10 +14,13 @@ public class SelectSpecifiedTraderServiceImp implements SelectSpecifiedTraderSer
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
     
-	public Trader getTrader(String traderId) {
+	public Trader getTrader(String traderName) {
 		@SuppressWarnings("unchecked")
-		List<Trader> list = jdbcTemplate.query("select * from trader where id = \"" 
-									+ traderId + "\"",new TraderRowMapper());
+		List<Trader> list = jdbcTemplate.query("select * from trader where name = \"" 
+									+ traderName + "\"",new TraderRowMapper());
+		if(list.size() == 0) {
+			return null;
+		}
         return list.get(0);
 	}
 
