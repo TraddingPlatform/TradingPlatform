@@ -6,7 +6,7 @@ public class Strategy
     private String equityId;
     private int lossThreshold;
     private int profitThreshold;
-    private String traderId;
+    private int traderId;
     private String createtime;
     public Strategy ()
     {
@@ -14,7 +14,7 @@ public class Strategy
         // TODO Auto-generated constructor stub
     }
     public Strategy (int id, String equityId, int lossThreshold,
-        int profitThreshold, String traderId, String createtime)
+        int profitThreshold, int traderId, String createtime)
     {
         super ();
         this.id = id;
@@ -24,41 +24,54 @@ public class Strategy
         this.traderId = traderId;
         this.createtime = createtime;
     }
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getEquityId() {
-		return equityId;
-	}
-	public void setEquityId(String equityId) {
-		this.equityId = equityId;
-	}
-	public int getLossThreshold() {
-		return lossThreshold;
-	}
-	public void setLossThreshold(int lossThreshold) {
-		this.lossThreshold = lossThreshold;
-	}
-	public int getProfitThreshold() {
-		return profitThreshold;
-	}
-	public void setProfitThreshold(int profitThreshold) {
-		this.profitThreshold = profitThreshold;
-	}
-	public String getTraderId() {
-		return traderId;
-	}
-	public void setTraderId(String traderId) {
-		this.traderId = traderId;
-	}
-	public String getCreatetime() {
-		return createtime;
-	}
-	public void setCreatetime(String createtime) {
-		this.createtime = createtime;
-	}
+    public int getId ()
+    {
+        return id;
+    }
+    public void setId (int id)
+    {
+        this.id = id;
+    }
+    public String getEquityId ()
+    {
+        return equityId;
+    }
+    public void setEquityId (String equityId)
+    {
+        this.equityId = equityId;
+    }
+    public int getLossThreshold ()
+    {
+        return lossThreshold;
+    }
+    public void setLossThreshold (int lossThreshold)
+    {
+        this.lossThreshold = lossThreshold;
+    }
+    public int getProfitThreshold ()
+    {
+        return profitThreshold;
+    }
+    public void setProfitThreshold (int profitThreshold)
+    {
+        this.profitThreshold = profitThreshold;
+    }
+    public int getTraderId ()
+    {
+        return traderId;
+    }
+    public void setTraderId (int traderId)
+    {
+        this.traderId = traderId;
+    }
+    public String getCreatetime ()
+    {
+        return createtime;
+    }
+    public void setCreatetime (String createtime)
+    {
+        this.createtime = createtime;
+    }
+    
     
 }
