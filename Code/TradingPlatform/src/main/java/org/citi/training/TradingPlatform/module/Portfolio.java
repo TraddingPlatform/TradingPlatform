@@ -4,7 +4,7 @@ public class Portfolio
 {
     private int id;
     private int traderId;
-    private String equityId;
+    private String equitySymbol;
     private int amount;
     private Double price;
     public Portfolio ()
@@ -12,13 +12,13 @@ public class Portfolio
         super ();
         // TODO Auto-generated constructor stub
     }
-    public Portfolio (int id, int traderId, String equityId, int amount,
+    public Portfolio (int id, int traderId, String equitySymbol, int amount,
         Double price)
     {
         super ();
         this.id = id;
         this.traderId = traderId;
-        this.equityId = equityId;
+        this.equitySymbol = equitySymbol;
         this.amount = amount;
         this.price = price;
     }
@@ -38,13 +38,13 @@ public class Portfolio
     {
         this.traderId = traderId;
     }
-    public String getEquityId ()
+    public String getequitySymbol ()
     {
-        return equityId;
+        return equitySymbol;
     }
-    public void setEquityId (String equityId)
+    public void setequitySymbol (String equitySymbol)
     {
-        this.equityId = equityId;
+        this.equitySymbol = equitySymbol;
     }
     public int getAmount ()
     {

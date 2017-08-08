@@ -1,11 +1,11 @@
 package org.citi.training.TradingPlatform.facade;
 
-import javax.ws.rs.GET;
+import javax.ws.rs.FormParam;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 
-import org.citi.training.TradingPlatform.controller.Loginable;
+import org.citi.training.TradingPlatform.controller.login.Login;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -16,19 +16,19 @@ import org.springframework.stereotype.Component;
 @Scope("request")
 public class LoginService {
 	
-	private Loginable loginManager;
+	private Login loginManager;
 	private ApplicationContext ctx;
 	
 	public LoginService() {
 		ctx = new ClassPathXmlApplicationContext("bean.xml");
-		loginManager = (Loginable) ctx.getBean("loginManager");
+		loginManager = (Login) ctx.getBean("loginManager");
 	}
-	
-	@GET
+
+	@POST
 	@Path("/login")
 	@Produces("text/plain")
-	public String login(@QueryParam("traderName")String traderName, 
-						@QueryParam("password")String password) {
+	public String login(@FormParam("traderName")String traderName, 
+			@FormParam("password")String password) {
 		boolean success = loginManager.login(traderName, password);
 		if(success) {
 			return "true";

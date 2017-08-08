@@ -6,7 +6,7 @@ import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class SelectSpecifiedTraderServiceImp implements SelectSpecifiedTraderService {
+public class SelectSpecifiedTraderImp implements SelectSpecifiedTrader {
 
 	private JdbcTemplate jdbcTemplate;
 
