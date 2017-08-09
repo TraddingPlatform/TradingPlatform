@@ -15,6 +15,7 @@ public class OrderBookRowMapper implements RowMapper {
 		orderBook.setQuantity(rs.getInt("quantity"));
 		orderBook.setIsBuy(rs.getInt("is_buy"));
 		orderBook.setPrice(rs.getDouble("price"));
+		orderBook.setTraderId(rs.getInt("trader_id"));
 		return orderBook;
 	}
 }

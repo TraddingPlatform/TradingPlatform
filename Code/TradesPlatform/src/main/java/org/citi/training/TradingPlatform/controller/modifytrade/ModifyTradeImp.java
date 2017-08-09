@@ -12,8 +12,8 @@ public class ModifyTradeImp implements ModifyTrade {
 	}
 	
 	public boolean modifyTrade(int orderBookId, String equitySymbol,
-											int quantity, double price, boolean isBuy) {
-		OrderBook orderBook = new OrderBook(orderBookId, equitySymbol, quantity, isBuy?1:0, price);
+											int quantity, double price, boolean isBuy, int traderId) {
+		OrderBook orderBook = new OrderBook(orderBookId, equitySymbol, quantity, isBuy?1:0, price, traderId);
 		try {
 			orderBookOption.modifyOrderBook(orderBook);
 		}

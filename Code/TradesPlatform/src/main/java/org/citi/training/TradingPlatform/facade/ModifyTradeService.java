@@ -31,8 +31,9 @@ public class ModifyTradeService {
 							@FormParam("equitySymbol")String equitySymbol,
 							@FormParam("quantity")int quantity,
 							@FormParam("price")double price,
-							@FormParam("isBuy")boolean isBuy) {
-		boolean success = modifyTrade.modifyTrade(orderBookId, equitySymbol, quantity, price, isBuy);
+							@FormParam("isBuy")boolean isBuy,
+							@FormParam("traderId")int traderId) {
+		boolean success = modifyTrade.modifyTrade(orderBookId, equitySymbol, quantity, price, isBuy,traderId);
 		if(success) {
 			return "true";
 		}

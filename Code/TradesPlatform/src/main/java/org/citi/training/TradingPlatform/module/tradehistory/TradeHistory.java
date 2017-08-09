@@ -2,7 +2,7 @@ package org.citi.training.TradingPlatform.module.tradehistory;
 
 import java.util.Date;
 
-public class TradeHistory
+public class TradeHistory implements Cloneable
 {
     private int id;
     private int traderId;
@@ -69,5 +69,9 @@ public class TradeHistory
 	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
-   
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+	
 }
