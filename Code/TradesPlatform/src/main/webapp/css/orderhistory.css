@@ -9,6 +9,14 @@ body footer {
 	margin-top: 5px;
 }
 
+.order-table-bg {
+	background-color:#ffffff;
+}
+
+.panel-heading {
+	background-color:#000000;
+}
+
 .panel-body
 .panel-default {
 	background-color:#ffffff;

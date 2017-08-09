@@ -73,5 +73,11 @@ public class OrderBookOptionImp implements OrderBookOption {
 				+ traderId + "\"", new OrderBookRowMapper());
 		return list;
 	}
+
+	@SuppressWarnings("unchecked")
+	public List<OrderBook> getOrderBookList() {
+		List<OrderBook> list = jdbcTemplate.query("select * from orderbook",new OrderBookRowMapper());
+		return list;
+	}
 	
 }

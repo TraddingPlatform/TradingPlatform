@@ -36,7 +36,11 @@ public abstract class BookTradeByGeneral implements BookTrade {
 			return false;
 		}
 		
-		recordTrade(traderId, matchOrderBookList);
+		try {
+			recordTrade(traderId, matchOrderBookList);
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
 		
 		return true;
 	}
@@ -56,7 +60,7 @@ public abstract class BookTradeByGeneral implements BookTrade {
 		return target;
 	}
 
-	protected final void recordTrade(int traderId, List<OrderBook> matchOrderBookList) {
+	protected final void recordTrade(int traderId, List<OrderBook> matchOrderBookList) throws CloneNotSupportedException {
 		List<TradeHistory> trades = new ArrayList<TradeHistory>();
 		for(OrderBook orderBook : matchOrderBookList){
 			TradeHistory trade = new TradeHistory();
@@ -67,7 +71,12 @@ public abstract class BookTradeByGeneral implements BookTrade {
 			trade.setIsBuy(isBuy);
 			trade.setAmount(orderBook.getQuantity());
 			trade.setCreatetime(new Date(System.currentTimeMillis()));
+			TradeHistory tradeAnother = (TradeHistory) trade.clone();
+			tradeAnother.setTraderId(orderBook.getTraderId());
+			int anotherIsBuy = orderBook.getIsBuy()==0 ? 0 : 1;
+			trade.setIsBuy(anotherIsBuy);
 			trades.add(trade);
+			trades.add(tradeAnother);
 		}
 		tradeHistoryOption.insertIntoTradeHistory(trades);
 	}
