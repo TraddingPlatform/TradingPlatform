@@ -56,12 +56,13 @@
 		<ul class="slides">
 			<li class="flex-active-slide"
 				style="background-color: #ffffff; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
-				<div class="background-image-holder overlay fadeIn"
+				<!-- <div class="background-image-holder overlay fadeIn"
 					style="background: url(&quot;imgs/background.jpg&quot;) 50% 50%;">
 					<img alt="Analytics Microservice" src="imgs/background.jpg"
 						class="background-image" draggable="false" style="display: none;">
-				</div>
-				<div class="panel-body">
+				</div> -->
+				<div class="order-table-bg">
+					<div class="panel-body">
 					<div class="panel panel-default">
 						<div class="panel-heading">Query</div>
 						<div class="panel-body">
@@ -91,6 +92,7 @@
 						</button>
 					</div>
 					<table id="tb_departments"></table>
+				</div>
 				</div>
 			</li>
 		</ul>
