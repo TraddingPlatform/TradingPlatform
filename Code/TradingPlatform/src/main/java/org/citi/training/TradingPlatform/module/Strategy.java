@@ -6,7 +6,7 @@ public class Strategy
     private String equitySymbol;
     private int lossThreshold;
     private int profitThreshold;
-    private String traderId;
+    private int traderId;
     private String createtime;
     public Strategy ()
     {
@@ -14,7 +14,7 @@ public class Strategy
         // TODO Auto-generated constructor stub
     }
     public Strategy (int id, String equitySymbol, int lossThreshold,
-        int profitThreshold, String traderId, String createtime)
+        int profitThreshold, int traderId, String createtime)
     {
         super ();
         this.id = id;
@@ -24,6 +24,7 @@ public class Strategy
         this.traderId = traderId;
         this.createtime = createtime;
     }
+    
 	public int getId() {
 		return id;
 	}
@@ -48,10 +49,10 @@ public class Strategy
 	public void setProfitThreshold(int profitThreshold) {
 		this.profitThreshold = profitThreshold;
 	}
-	public String getTraderId() {
+	public int getTraderId() {
 		return traderId;
 	}
-	public void setTraderId(String traderId) {
+	public void setTraderId(int traderId) {
 		this.traderId = traderId;
 	}
 	public String getCreatetime() {
@@ -60,5 +61,4 @@ public class Strategy
 	public void setCreatetime(String createtime) {
 		this.createtime = createtime;
 	}
-    
 }
