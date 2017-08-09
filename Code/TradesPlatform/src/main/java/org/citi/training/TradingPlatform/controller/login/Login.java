@@ -40,7 +40,7 @@ public class Login {
 	        SelectSpecifiedTraderImp selectSpecifiedTraderServiceImp = (SelectSpecifiedTraderImp) ctx.getBean("traderService");
 	    	Trader trader = selectSpecifiedTraderServiceImp.getTrader(username);
 	    	if(trader == null) {
-		        map.put("message","failed");
+		        map.put("message","failed1");
 			} else if (trader.getPassword().equals(encoderByMd5(inputPassword))) {
 		        map.put("message","success");
 		        map.put("traderId", trader.getId());

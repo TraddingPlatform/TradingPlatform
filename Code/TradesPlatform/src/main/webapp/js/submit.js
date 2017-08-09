@@ -46,7 +46,7 @@ function func() {
 		contentType : "text/html;charset=utf-8",
 		type : "POST",
 		dataType : "json",
-		url : "submit2.spring",
+		url : "submit.spring",
 		error : function(data) {
 			console.error("error:" + JSON.stringify(data));
 		},
