@@ -1,0 +1,13 @@
+org\citi\training\TradingPlatform\module\trader\SelectSpecifiedTraderService.class
+org\citi\training\TradingPlatform\controller\LoginManager.class
+org\citi\training\TradingPlatform\controller\Loginable.class
+org\citi\training\TradingPlatform\module\Strategy.class
+org\citi\training\TradingPlatform\module\trader\TraderRowMapper.class
+org\citi\training\TradingPlatform\server\StartServer.class
+org\citi\training\TradingPlatform\module\Equity.class
+org\citi\training\TradingPlatform\module\Portfolio.class
+org\citi\training\TradingPlatform\facade\LoginService.class
+org\citi\training\TradingPlatform\controller\LoginController.class
+org\citi\training\TradingPlatform\module\trader\SelectSpecifiedTraderServiceImp.class
+org\citi\training\TradingPlatform\module\trader\Trader.class
+org\citi\training\TradingPlatform\module\Trade.class
