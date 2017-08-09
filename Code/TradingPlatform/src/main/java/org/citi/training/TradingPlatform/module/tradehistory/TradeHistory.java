@@ -1,8 +1,8 @@
-package org.citi.training.TradingPlatform.module.trade;
+package org.citi.training.TradingPlatform.module.tradehistory;
 
 import java.util.Date;
 
-public class Trade
+public class TradeHistory
 {
     private int id;
     private int traderId;
@@ -11,12 +11,12 @@ public class Trade
     private int isBuy;
     private int amount;
     private Date createtime;
-    public Trade ()
+    public TradeHistory ()
     {
         super ();
         // TODO Auto-generated constructor stub
     }
-	public Trade(int id, int traderId, Double price, String equitySymbol, int isBuy, int amount,
+	public TradeHistory(int id, int traderId, Double price, String equitySymbol, int isBuy, int amount,
 			Date createtime) {
 		super();
 		this.id = id;

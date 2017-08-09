@@ -47,7 +47,7 @@ public class OrderBookOptionImp implements OrderBookOption {
 	}
 
 	public void modifyOrderBook(OrderBook orderBook) {
-		StringBuilder sql = new StringBuilder("UPDATE orderbook SET equity__symbol = \'");
+		StringBuilder sql = new StringBuilder("UPDATE orderbook SET equity_symbol = \'");
 		sql.append(orderBook.getEquitySymbol());
 		sql.append("\', quantity = ");
 		sql.append(orderBook.getQuantity());
@@ -55,7 +55,7 @@ public class OrderBookOptionImp implements OrderBookOption {
 		sql.append(orderBook.getIsBuy());
 		sql.append(", price = ");
 		sql.append(orderBook.getPrice());
-		sql.append("WHERE id = ");
+		sql.append(" WHERE id = ");
 		sql.append(orderBook.getId());
 		jdbcTemplate.execute(sql.toString());
 	}

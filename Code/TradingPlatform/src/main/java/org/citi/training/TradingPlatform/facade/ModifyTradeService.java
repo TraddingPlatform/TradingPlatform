@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("request")
 public class ModifyTradeService {
+	
 	private ModifyTrade modifyTrade;
 	private ApplicationContext ctx;
 	
@@ -26,12 +27,11 @@ public class ModifyTradeService {
 	@POST
 	@Path("/modifytrade")
 	@Produces("text/plain")
-	public String login(@FormParam("orderBookId")int orderBookId, 
-						@FormParam("equitySymbol")String equitySymbol,
-						@FormParam("quantity")int quantity,
-						@FormParam("price")double price,
-						@FormParam("isBuy")boolean isBuy,
-						@FormParam("tradeType")String tradeType) {
+	public String modifyTrade(@FormParam("orderBookId")int orderBookId, 
+							@FormParam("equitySymbol")String equitySymbol,
+							@FormParam("quantity")int quantity,
+							@FormParam("price")double price,
+							@FormParam("isBuy")boolean isBuy) {
 		boolean success = modifyTrade.modifyTrade(orderBookId, equitySymbol, quantity, price, isBuy);
 		if(success) {
 			return "true";

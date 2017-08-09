@@ -12,12 +12,13 @@ public class ModifyTradeImp implements ModifyTrade {
 	}
 	
 	public boolean modifyTrade(int orderBookId, String equitySymbol,
-			int quantity, double price, boolean isBuy) {
+											int quantity, double price, boolean isBuy) {
 		OrderBook orderBook = new OrderBook(orderBookId, equitySymbol, quantity, isBuy?1:0, price);
 		try {
-			orderBookOption.modifyOrderBookQuantity(orderBook);
+			orderBookOption.modifyOrderBook(orderBook);
 		}
 		catch(Exception e) {
+			System.out.println(e);
 			return false;
 		}
 		return true;
