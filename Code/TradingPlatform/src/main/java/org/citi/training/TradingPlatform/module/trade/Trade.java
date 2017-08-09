@@ -1,27 +1,29 @@
-package org.citi.training.TradingPlatform.module;
+package org.citi.training.TradingPlatform.module.trade;
+
+import java.util.Date;
 
 public class Trade
 {
     private int id;
     private int traderId;
     private Double price;
-    private String equityId;
-    private boolean buy;
+    private String equitySymbol;
+    private int isBuy;
     private int amount;
-    private String createtime;
+    private Date createtime;
     public Trade ()
     {
         super ();
         // TODO Auto-generated constructor stub
     }
-	public Trade(int id, int traderId, Double price, String equityId, boolean buy, int amount,
-			String createtime) {
+	public Trade(int id, int traderId, Double price, String equitySymbol, int isBuy, int amount,
+			Date createtime) {
 		super();
 		this.id = id;
 		this.traderId = traderId;
 		this.price = price;
-		this.equityId = equityId;
-		this.buy = buy;
+		this.equitySymbol = equitySymbol;
+		this.isBuy = isBuy;
 		this.amount = amount;
 		this.createtime = createtime;
 	}
@@ -43,17 +45,17 @@ public class Trade
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	public String getEquityId() {
-		return equityId;
+	public String getEquitySymbol() {
+		return equitySymbol;
 	}
-	public void setEquityId(String equityId) {
-		this.equityId = equityId;
+	public void setEquitySymbol(String equitySymbol) {
+		this.equitySymbol = equitySymbol;
 	}
-	public boolean isBuy() {
-		return buy;
+	public int getIsBuy() {
+		return isBuy;
 	}
-	public void setBuy(boolean buy) {
-		this.buy = buy;
+	public void setIsBuy(int isBuy) {
+		this.isBuy = isBuy;
 	}
 	public int getAmount() {
 		return amount;
@@ -61,10 +63,10 @@ public class Trade
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	public String getCreatetime() {
+	public Date getCreatetime() {
 		return createtime;
 	}
-	public void setCreatetime(String createtime) {
+	public void setCreatetime(Date createtime) {
 		this.createtime = createtime;
 	}
    

@@ -1,20 +1,20 @@
-package org.citi.training.TradingPlatform.controller;
+package org.citi.training.TradingPlatform.controller.login;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import org.citi.training.TradingPlatform.module.trader.SelectSpecifiedTraderService;
+import org.citi.training.TradingPlatform.module.trader.SelectSpecifiedTrader;
 import org.citi.training.TradingPlatform.module.trader.Trader;
 
 import sun.misc.BASE64Encoder;
 
 @SuppressWarnings("restriction")
-public class LoginManager implements Loginable{
+public class LoginManager implements Login{
 	
-	private SelectSpecifiedTraderService selectSpecifiedTraderService;
+	private SelectSpecifiedTrader selectSpecifiedTraderService;
 
-	public void setSelectSpecifiedTraderService(SelectSpecifiedTraderService selectSpecifiedTraderService) {
+	public void setSelectSpecifiedTraderService(SelectSpecifiedTrader selectSpecifiedTraderService) {
 		this.selectSpecifiedTraderService = selectSpecifiedTraderService;
 	}
 

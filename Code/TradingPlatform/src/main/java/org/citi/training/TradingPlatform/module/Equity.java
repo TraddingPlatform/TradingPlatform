@@ -2,7 +2,6 @@ package org.citi.training.TradingPlatform.module;
 
 public class Equity
 {
-    private String id;
     private String symbol;
     private String latestPrice;
     public Equity ()
@@ -10,20 +9,11 @@ public class Equity
         super ();
         // TODO Auto-generated constructor stub
     }
-    public Equity (String id, String symbol, String latestPrice)
+    public Equity ( String symbol, String latestPrice)
     {
         super ();
-        this.id = id;
         this.symbol = symbol;
         this.latestPrice = latestPrice;
-    }
-    public String getId ()
-    {
-        return id;
-    }
-    public void setId (String id)
-    {
-        this.id = id;
     }
     public String getSymbol ()
     {

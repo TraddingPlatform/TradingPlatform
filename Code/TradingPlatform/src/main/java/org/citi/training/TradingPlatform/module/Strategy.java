@@ -3,7 +3,7 @@ package org.citi.training.TradingPlatform.module;
 public class Strategy
 {
     private int id;
-    private String equityId;
+    private String equitySymbol;
     private int lossThreshold;
     private int profitThreshold;
     private String traderId;
@@ -13,12 +13,12 @@ public class Strategy
         super ();
         // TODO Auto-generated constructor stub
     }
-    public Strategy (int id, String equityId, int lossThreshold,
+    public Strategy (int id, String equitySymbol, int lossThreshold,
         int profitThreshold, String traderId, String createtime)
     {
         super ();
         this.id = id;
-        this.equityId = equityId;
+        this.equitySymbol = equitySymbol;
         this.lossThreshold = lossThreshold;
         this.profitThreshold = profitThreshold;
         this.traderId = traderId;
@@ -30,11 +30,11 @@ public class Strategy
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getEquityId() {
-		return equityId;
+	public String getequitySymbol() {
+		return equitySymbol;
 	}
-	public void setEquityId(String equityId) {
-		this.equityId = equityId;
+	public void setequitySymbol(String equitySymbol) {
+		this.equitySymbol = equitySymbol;
 	}
 	public int getLossThreshold() {
 		return lossThreshold;

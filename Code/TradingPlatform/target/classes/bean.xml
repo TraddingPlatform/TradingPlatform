@@ -41,12 +41,39 @@
     
     <tx:annotation-driven transaction-manager="txManager" />
 	-->
-	<bean id="traderService" class="org.citi.training.TradingPlatform.module.trader.SelectSpecifiedTraderServiceImp">
+	<bean id="traderService" class="org.citi.training.TradingPlatform.module.trader.SelectSpecifiedTraderImp">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
     
-	<bean id="loginManager" class="org.citi.training.TradingPlatform.controller.LoginManager">
+	<bean id="loginManager" class="org.citi.training.TradingPlatform.controller.login.LoginManager">
     	<property name="selectSpecifiedTraderService" ref="traderService"></property>
     </bean>
     
+    <bean id="tradeService" class="org.citi.training.TradingPlatform.module.trade.TradeOptionImp">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <bean id="orderBookService" class="org.citi.training.TradingPlatform.module.orderbook.OrderBookOptionImp">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    
+    <bean id="bookTradeByMrkt" class="org.citi.training.TradingPlatform.controller.booktrade.BookTradeByMrkt">
+    	<property name="tradeOption" ref="tradeService"></property>
+    	<property name="orderBookOption" ref="orderBookService"></property>
+    </bean>
+    
+    <bean id="bookTradeByIoc" class="org.citi.training.TradingPlatform.controller.booktrade.BookTradeByIoc">
+    	<property name="tradeOption" ref="tradeService"></property>
+    	<property name="orderBookOption" ref="orderBookService"></property>
+    </bean>
+    
+    <bean id="bookTradeByFok" class="org.citi.training.TradingPlatform.controller.booktrade.BookTradeByFok">
+    	<property name="tradeOption" ref="tradeService"></property>
+    	<property name="orderBookOption" ref="orderBookService"></property>
+    </bean>
+    
+    <bean id="bookTradeByGtc" class="org.citi.training.TradingPlatform.controller.booktrade.BookTradeByGtc">
+    	<property name="tradeOption" ref="tradeService"></property>
+    	<property name="orderBookOption" ref="orderBookService"></property>
+    </bean>
 </beans>
