@@ -95,8 +95,8 @@ public class JSONUtil {
     public static String removeProperty(String json, String propertyName){
         try{
             JSONObject obj = JSON.parseObject(json);
-            Set set = obj.keySet();
-            Object propertyValue = set.remove(propertyName);
+            Set<?> set = obj.keySet();
+            set.remove(propertyName);
             return obj.toString();
         }
         catch (Exception e){
@@ -116,7 +116,7 @@ public class JSONUtil {
     public static String updateProperty(String json,String propertyName, Object propertyValue){
         try{
             JSONObject obj = JSON.parseObject(json);
-            Set set = obj.keySet();
+            Set<?> set = obj.keySet();
             if(set.contains(propertyName))
                 obj.put(propertyName, JSON.toJSONString(propertyValue));
             return obj.toString();
@@ -137,7 +137,7 @@ public class JSONUtil {
         try{
             boolean isContain = false;
             JSONObject obj = JSON.parseObject(json);
-            Set set = obj.keySet();
+            Set<?> set = obj.keySet();
             isContain = set.contains(propertyName);
             return isContain;
         }catch (Exception e){
@@ -274,9 +274,9 @@ public class JSONUtil {
         }
     }
 
-    public static List toBeanList(String str, Class<?> clazz){
+    public static List<Object> toBeanList(String str, Class<?> clazz){
         try {
-            List list = new ArrayList();
+            List<Object> list = new ArrayList<Object>();
             JSONArray jsonArray = JSONArray.parseArray(str);
             for (int i = 0; i < jsonArray.size(); i++) {
                 list.add(toBean(jsonArray.get(i).toString(),clazz));
@@ -318,7 +318,7 @@ public class JSONUtil {
     }
 
 
-    public static Map jsonToMap(String json){
+    public static Map<?, ?> jsonToMap(String json){
         return JSON.parseObject(json);
     }
 
