@@ -7,16 +7,16 @@ import java.util.List;
 
 import org.citi.training.TradingPlatform.module.orderbook.OrderBook;
 import org.citi.training.TradingPlatform.module.orderbook.OrderBookOption;
-import org.citi.training.TradingPlatform.module.trade.Trade;
-import org.citi.training.TradingPlatform.module.trade.TradeOption;
+import org.citi.training.TradingPlatform.module.tradehistory.TradeHistory;
+import org.citi.training.TradingPlatform.module.tradehistory.TradeHistoryOption;
 
 public abstract class BookTradeByGeneral implements BookTrade {
 
-	private TradeOption tradeOption;
+	private TradeHistoryOption tradeOption;
 	protected OrderBookOption orderBookOption;
 	protected List<OrderBook> orderBookList;
 	
-	public void setTradeOption(TradeOption tradeOption) {
+	public void setTradeOption(TradeHistoryOption tradeOption) {
 		this.tradeOption = tradeOption;
 	}
 
@@ -25,7 +25,7 @@ public abstract class BookTradeByGeneral implements BookTrade {
 	}
 	
 	public boolean bookTrade(int traderId, String equitySymbol, int quantity, double price, boolean isBuy) {
-		orderBookList = orderBookOption.getOrderBookList(equitySymbol, isBuy);
+		orderBookList = orderBookOption.getOrderBookListBySymbol(equitySymbol, isBuy);
 		List<OrderBook> matchOrderBookList = null;
 		try {
 			matchOrderBookList = getMatchOrderBookList(quantity, price, isBuy);
@@ -57,9 +57,9 @@ public abstract class BookTradeByGeneral implements BookTrade {
 	}
 
 	protected final void recordTrade(int traderId, List<OrderBook> matchOrderBookList) {
-		List<Trade> trades = new ArrayList<Trade>();
+		List<TradeHistory> trades = new ArrayList<TradeHistory>();
 		for(OrderBook orderBook : matchOrderBookList){
-			Trade trade = new Trade();
+			TradeHistory trade = new TradeHistory();
 			trade.setTraderId(traderId);
 			trade.setPrice(orderBook.getPrice());
 			trade.setEquitySymbol(orderBook.getEquitySymbol());
@@ -69,7 +69,7 @@ public abstract class BookTradeByGeneral implements BookTrade {
 			trade.setCreatetime(new Date(System.currentTimeMillis()));
 			trades.add(trade);
 		}
-		tradeOption.insertIntoTrade(trades);
+		tradeOption.insertIntoTradeHistory(trades);
 	}
 	
 	protected final void deleteOrderBook(List<OrderBook> matchOrderBookList) {

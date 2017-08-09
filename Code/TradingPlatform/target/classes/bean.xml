@@ -49,7 +49,7 @@
     	<property name="selectSpecifiedTraderService" ref="traderService"></property>
     </bean>
     
-    <bean id="tradeService" class="org.citi.training.TradingPlatform.module.trade.TradeOptionImp">
+    <bean id="tradeHistoryService" class="org.citi.training.TradingPlatform.module.tradeHistory.tradeHistoryOptionImp">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
 
@@ -58,22 +58,31 @@
     </bean>
     
     <bean id="bookTradeByMrkt" class="org.citi.training.TradingPlatform.controller.booktrade.BookTradeByMrkt">
-    	<property name="tradeOption" ref="tradeService"></property>
+    	<property name="tradeHistoryOption" ref="tradeHistoryService"></property>
     	<property name="orderBookOption" ref="orderBookService"></property>
     </bean>
     
     <bean id="bookTradeByIoc" class="org.citi.training.TradingPlatform.controller.booktrade.BookTradeByIoc">
-    	<property name="tradeOption" ref="tradeService"></property>
+    	<property name="tradeHistoryOption" ref="tradeHistoryService"></property>
     	<property name="orderBookOption" ref="orderBookService"></property>
     </bean>
     
     <bean id="bookTradeByFok" class="org.citi.training.TradingPlatform.controller.booktrade.BookTradeByFok">
-    	<property name="tradeOption" ref="tradeService"></property>
+    	<property name="tradeHistoryOption" ref="tradeHistoryService"></property>
     	<property name="orderBookOption" ref="orderBookService"></property>
     </bean>
     
     <bean id="bookTradeByGtc" class="org.citi.training.TradingPlatform.controller.booktrade.BookTradeByGtc">
-    	<property name="tradeOption" ref="tradeService"></property>
+    	<property name="tradeHistoryOption" ref="tradeHistoryService"></property>
     	<property name="orderBookOption" ref="orderBookService"></property>
     </bean>
+    
+    <bean id="modifyTrade" class="org.citi.training.TradingPlatform.controller.modifytrade.ModifyTradeImp">
+        <property name="orderBookOption" ref="orderBookService"></property>
+    </bean>
+    
+    <bean id="selectTradeHistory" class="org.citi.training.TradingPlatform.controller.tradehistory.SelectTradeHistoryImp">
+    	<property name="tradeHistoryOption" ref="tradeHistoryService"></property>
+    </bean>
+    
 </beans>
