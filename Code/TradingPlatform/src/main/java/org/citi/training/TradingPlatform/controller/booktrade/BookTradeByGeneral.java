@@ -25,7 +25,7 @@ public abstract class BookTradeByGeneral implements BookTrade {
 	}
 	
 	public boolean bookTrade(int traderId, String equitySymbol, int quantity, double price, boolean isBuy) {
-		orderBookList = orderBookOption.getOrderBookList(equitySymbol, isBuy);
+		orderBookList = orderBookOption.getOrderBookListBySymbol(equitySymbol, isBuy);
 		List<OrderBook> matchOrderBookList = null;
 		try {
 			matchOrderBookList = getMatchOrderBookList(quantity, price, isBuy);

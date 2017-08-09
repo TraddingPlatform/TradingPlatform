@@ -1,4 +1,4 @@
-package org.citi.training.TradingPlatform.module;
+package org.citi.training.TradingPlatform.module.portfolio;
 
 public class Portfolio
 {

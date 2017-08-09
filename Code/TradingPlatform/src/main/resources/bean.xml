@@ -76,4 +76,9 @@
     	<property name="tradeOption" ref="tradeService"></property>
     	<property name="orderBookOption" ref="orderBookService"></property>
     </bean>
+    
+    <bean id="modifyTrade" class="org.citi.training.TradingPlatform.controller.modifytrade.ModifyTradeImp">
+        <property name="orderBookOption" ref="orderBookService"></property>
+    </bean>
+    
 </beans>

@@ -46,12 +46,32 @@ public class OrderBookOptionImp implements OrderBookOption {
 		jdbcTemplate.execute(sql.toString());
 	}
 
+	public void modifyOrderBook(OrderBook orderBook) {
+		StringBuilder sql = new StringBuilder("UPDATE orderbook SET equity__symbol = \'");
+		sql.append(orderBook.getEquitySymbol());
+		sql.append("\', quantity = ");
+		sql.append(orderBook.getQuantity());
+		sql.append(", is_buy = ");
+		sql.append(orderBook.getIsBuy());
+		sql.append(", price = ");
+		sql.append(orderBook.getPrice());
+		sql.append("WHERE id = ");
+		sql.append(orderBook.getId());
+		jdbcTemplate.execute(sql.toString());
+	}
 	@SuppressWarnings("unchecked")
-	public List<OrderBook> getOrderBookList(String equitySymbol, boolean isBuy) {
+	public List<OrderBook> getOrderBookListBySymbol(String equitySymbol, boolean isBuy) {
 		int isBuyOrderBook = isBuy ? 0 : 1;
 		List<OrderBook> list = jdbcTemplate.query("select * from orderbook where equity_symbol = \"" 
 				+ equitySymbol + "\" and is_buy = " + isBuyOrderBook, new OrderBookRowMapper());
 		return list;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<OrderBook> getOrderBookListByTraderId(int traderId) {
+		List<OrderBook> list = jdbcTemplate.query("select * from orderbook where trader_id = \"" 
+				+ traderId + "\"", new OrderBookRowMapper());
+		return list;
+	}
+	
 }
