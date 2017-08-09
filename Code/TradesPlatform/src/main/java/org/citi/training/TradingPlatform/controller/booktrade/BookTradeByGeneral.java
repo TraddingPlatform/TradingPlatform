@@ -73,6 +73,10 @@ public abstract class BookTradeByGeneral implements BookTrade {
 	}
 	
 	protected final void deleteOrderBook(List<OrderBook> matchOrderBookList) {
+	    if (matchOrderBookList.size () == 0)
+        {
+	        return;
+        }
 		double lowestPrice = Integer.MAX_VALUE;
 		double hightestPrice = 0;
 		int isBuy = matchOrderBookList.get(0).getIsBuy();
