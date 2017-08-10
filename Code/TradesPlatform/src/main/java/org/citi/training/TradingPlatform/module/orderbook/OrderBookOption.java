@@ -15,4 +15,6 @@ public interface OrderBookOption {
 	public List<OrderBook> getOrderBookListBySymbol(String equitySymbol, boolean isBuy);
 	
 	public List<OrderBook> getOrderBookListByTraderId(int traderId);
+	
+	public List<OrderBook> getOrderBookList();
 }
