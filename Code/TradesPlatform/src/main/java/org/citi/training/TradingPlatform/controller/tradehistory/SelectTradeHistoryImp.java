@@ -6,10 +6,7 @@ import java.util.List;
 import org.citi.training.TradingPlatform.module.tradehistory.TradeHistory;
 import org.citi.training.TradingPlatform.module.tradehistory.TradeHistoryOption;
 
-import com.google.gson.Gson;
-
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject; 
+import com.google.gson.Gson; 
 
 public class SelectTradeHistoryImp implements SelectTradeHistory {
 
