@@ -148,8 +148,15 @@ public class OrderBookOptionImp implements OrderBookOption {
 	
 	
 	@SuppressWarnings("unchecked")
-	public int getOrderBookTotalNums (int traderId) {
-		List<Integer> elementNumberList = jdbcTemplate.query("SELECT COUNT(*) FROM orderbook where trader_id=" + traderId, new CountRowMapper());
+	public int getOrderBookTotalNums (int traderId, String symbol) {
+		StringBuilder sql = new StringBuilder("SELECT COUNT(*) FROM orderbook where trader_id=" + traderId);
+		if (symbol.length() != 0) {
+			sql.append(" AND equity_symbol = \'");
+			sql.append(symbol);
+			sql.append("\' ");
+		}
+		System.out.println("getOrderBookTotalNums: " + sql.toString());
+		List<Integer> elementNumberList = jdbcTemplate.query(sql.toString(), new CountRowMapper());
         int elementNumber = elementNumberList.get(0);
         return elementNumber;
 	}

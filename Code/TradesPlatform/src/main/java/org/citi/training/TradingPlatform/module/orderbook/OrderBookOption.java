@@ -25,6 +25,6 @@ public interface OrderBookOption {
 
 	public HashMap<String, List<OrderBook>> getAllSymbolOrders (String symbol);
 
-	public int getOrderBookTotalNums (int traderId);
+	public int getOrderBookTotalNums (int traderId, String symbol);
 
 }

@@ -45,7 +45,7 @@ public class GetOrderBookImp implements GetOrderBook {
 	
 	public String getOrderBookByTraderId(int limit, int offset, int traderId, String symbol) {
 		List<OrderBook> orderBooks = orderBookOption.getOrderBookListByTraderId(limit, offset, traderId, symbol);
-		int totalNums = orderBookOption.getOrderBookTotalNums (traderId);
+		int totalNums = orderBookOption.getOrderBookTotalNums (traderId, symbol);
 		HashMap<String, Object> returnResult = new HashMap<String, Object> ();
 		returnResult.put ("total", totalNums);
 		returnResult.put ("rows", orderBooks);

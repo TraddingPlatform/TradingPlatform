@@ -31,7 +31,6 @@
 <script src="bootstrap-table-master/src/bootstrap-table.js"></script>
 <link href="bootstrap-table-master/src/bootstrap-table.css" rel="stylesheet" />
 <script src="js/gtcorder.js"></script>
-<script type="text/javascript" src="js/gtcorder.js"></script>
 
 <!-- pretty print code-->
 </head>
@@ -126,6 +125,33 @@
 		<ol class="flex-control-nav flex-control-paging"></ol>
 		</section>
 	</div>
+	<form class="edit_form">
+		    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		        <div class="modal-dialog" role="document">
+		            <div class="modal-content">
+		                <div class="modal-header">
+		                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		                    <h4 class="modal-title" id="myModalLabel">Update Order</h4>
+		                </div>
+		                <div class="modal-body">
+		
+		                    <div class="form-group">
+		                        <label for="txt_price">Price</label>
+		                        <input type="text" name="txt_price" class="form-control" id="txt_price" placeholder="Price">
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="txt_quantity">Quantity</label>
+		                        <input type="text" name="txt_quantity" class="form-control" id="txt_quantity" placeholder="Quantity">
+		                    </div>
+		                </div>
+		                <div class="modal-footer">
+		                    <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Close</button>
+		                    <button type="button" id="btn_submit" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>Save</button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</form>
 	<footer style="margin-top: 0px; background-color: #0F1A2C;"
 		data-reactid=".0.3">
 	<div class="row" data-reactid=".0.3.0">
@@ -133,7 +159,7 @@
 			data-reactid=".0.3.0.0">
 
 			<p class="company-name" data-reactid=".0.3.0.0.2">
-				<span data-reactid=".0.3.0.0.2.0">Two Hours © </span><span
+				<span data-reactid=".0.3.0.0.2.0">Two Hours Â© </span><span
 					data-reactid=".0.3.0.0.2.1">2017 </span><span
 					data-reactid=".0.3.0.0.2.1">ShangHai</span>
 			</p>

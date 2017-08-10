@@ -76,10 +76,17 @@ public class TradeHistoryOptionImp implements TradeHistoryOption {
 	}
 
     @SuppressWarnings("unchecked")
-    public int getTradesTotalNums (int traderId)
+    public int getTradesTotalNums (int traderId, String symbol)
     {
         // TODO Auto-generated method stub
-        List<Integer> elementNumberList = jdbcTemplate.query("SELECT COUNT(*) FROM tradehistory where trader_id=" + traderId, new CountRowMapper());
+    		StringBuilder sql = new StringBuilder("SELECT COUNT(*) FROM tradehistory where trader_id=" + traderId);
+    		if (symbol.length() != 0) {
+    			sql.append(" AND equity_symbol = \'");
+    			sql.append(symbol);
+    			sql.append("\' ");
+    		}
+    		System.out.println("getTradesTotalNums: " + sql.toString());
+        List<Integer> elementNumberList = jdbcTemplate.query(sql.toString(), new CountRowMapper());
         int elementNumber = elementNumberList.get(0);
         return elementNumber;
     }

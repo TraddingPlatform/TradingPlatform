@@ -10,6 +10,6 @@ public interface TradeHistoryOption {
 	
 	public List<TradeHistory> getTradeHistory(int traderId);
 	
-	public int getTradesTotalNums (int traderId);
+	public int getTradesTotalNums (int traderId, String symbol);
 	
 }

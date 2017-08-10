@@ -18,7 +18,7 @@ public class SelectTradeHistoryImp implements SelectTradeHistory {
 
 	public String selectTradeHistory(int limit, int offset, int traderId, String symbol) {
 		List<TradeHistory> tradeHistoryList = tradeHistoryOption.getTradeHistory(limit, offset, traderId, symbol);
-		int totalNums = tradeHistoryOption.getTradesTotalNums (traderId);
+		int totalNums = tradeHistoryOption.getTradesTotalNums (traderId, symbol);
 		HashMap<String, Object> returnResult = new HashMap<String, Object> ();
 		returnResult.put ("total", totalNums);
 		returnResult.put ("rows", tradeHistoryList);
