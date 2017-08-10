@@ -223,7 +223,7 @@ html>body td {
 											<option value="Mrkt">MRKT</option>
 											<option value="Ioc">IOC</option>
 											<option value="Fok">FOK</option>
-											<option value="Gct">GCT</option>
+											<option value="Gtc">Gtc</option>
 
 										</select> <select class="form-control submit-input" name="Strategy"
 											id="StrategySelect" onchange="checkField(this.value)">
