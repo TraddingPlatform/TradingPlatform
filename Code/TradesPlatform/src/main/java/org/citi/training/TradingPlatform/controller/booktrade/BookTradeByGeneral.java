@@ -33,7 +33,7 @@ public abstract class BookTradeByGeneral implements BookTrade {
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
-		if(matchOrderBookList.size() == 0) {
+		if(matchOrderBookList==null || matchOrderBookList.size() == 0) {
 			return false;
 		}
 		
@@ -84,8 +84,8 @@ public abstract class BookTradeByGeneral implements BookTrade {
 	}
 	
 	private void recordMarketPrice(TradeHistory trade) {
-		// TradeServer.getCurrentPrice().put(trade.getEquitySymbol(),trade.getPrice());
-		// TradeServer.getSymbolSet().add(trade.getEquitySymbol());
+		TradeServer.getCurrentPrice().put(trade.getEquitySymbol(),trade.getPrice());
+		TradeServer.getSymbolSet().add(trade.getEquitySymbol());
 	}
 	
 	protected final void deleteOrderBook(List<OrderBook> matchOrderBookList) {

@@ -5,6 +5,17 @@ function GetJsonData() {
 	return json;
 }
 
+function autoRefresh() {
+	// 只有在用户输入了Symbol的情况下才会实时刷新
+	var username = sessionStorage.getItem("traderId");
+	var symbol = $("#symbol").val();
+	console.log("Symbol value: " + symbol);
+	if (symbol != null) {
+		console.log("Update Symbol Data");
+		get_symbol_data();
+	}
+}
+
 function get_symbol_data() {
 	$.ajax({
 		data : JSON.stringify(GetJsonData()),
@@ -22,10 +33,10 @@ function get_symbol_data() {
 			}
 		},
 		error : function(XMLHttpRequest, textStatus, errorThrown) {
-			alert("error");
-			alert(XMLHttpRequest.status);
-			alert(XMLHttpRequest.readyState);
-			alert(textStatus);
+//			alert("error");
+//			alert(XMLHttpRequest.status);
+//			alert(XMLHttpRequest.readyState);
+//			alert(textStatus);
 		}
 		
 	});
@@ -93,6 +104,9 @@ $(document).ready(function() {
 		// alert("Trader not logined");
 		location.href = "newLogin.jsp";
 	}
+	
+	// 每隔1秒请求数据刷新
+	setInterval("autoRefresh()", 1000);
 });
 
 function logout() {
