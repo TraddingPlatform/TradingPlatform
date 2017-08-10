@@ -16,9 +16,11 @@ $(function () {
     //2.初始化Button的点击事件
     var oButtonInit = new ButtonInit();
     oButtonInit.Init();
-
 });
 
+function search() {
+	$('#tb_departments').bootstrapTable('refresh');
+}
 
 var TableInit = function () {
     var oTableInit = new Object();
@@ -27,7 +29,7 @@ var TableInit = function () {
         $('#tb_departments').bootstrapTable({
             url: '/TradesPlatform/orderHistory.spring',         //请求后台的URL（*）
             method: 'post',                      //请求方式（*）
-            toolbar: '#toolbar',                //工具按钮用哪个容器
+//            toolbar: '#toolbar',                //工具按钮用哪个容器
             striped: true,                      //是否显示行间隔色
             cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,                   //是否显示分页（*）
@@ -72,17 +74,7 @@ var TableInit = function () {
             },{
                 field: 'createtime',
                 title: 'Create Time'
-            }, 
-            {
-                title: 'Operations',
-                field: '',
-                align: 'center',
-                formatter:function(value,row,index){
-                    var e = '<a href="#" mce_href="#" onclick="edit(\''+ row.id + '\')">Edit</a> ';
-                    var d = '<a href="#" mce_href="#" onclick="del(\''+ row.id +'\')">Cancle</a> ';
-                    return e+d;
-                }
-            },]
+            }, ]
         });
     };
 
@@ -102,7 +94,6 @@ var TableInit = function () {
     return oTableInit;
 };
 
-
 var ButtonInit = function () {
     var oInit = new Object();
     var postdata = {};
@@ -113,3 +104,4 @@ var ButtonInit = function () {
 
     return oInit;
 };
+

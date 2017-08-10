@@ -84,3 +84,7 @@ html>body td {
 .nav-default {
 	background-color: #393939;
 }
+
+.navbar-brand {
+	color: #000000;
+}
