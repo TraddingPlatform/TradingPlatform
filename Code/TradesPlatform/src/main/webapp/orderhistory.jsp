@@ -26,7 +26,7 @@
 </head>
 <body>
 	<div class="nav-container">
-		<nav class="nav-1">
+		<nav class="nav-default nav-1">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -52,16 +52,7 @@
 		</nav>
 	</div>
 	<div class="main-container">
-		<section class="hero-slider large-image">
-		<ul class="slides">
-			<li class="flex-active-slide"
-				style="background-color: #ffffff; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;">
-				<!-- <div class="background-image-holder overlay fadeIn"
-					style="background: url(&quot;imgs/background.jpg&quot;) 50% 50%;">
-					<img alt="Analytics Microservice" src="imgs/background.jpg"
-						class="background-image" draggable="false" style="display: none;">
-				</div> -->
-				<div class="order-table-bg">
+		<div class="order-table-bg">
 					<div class="panel-body">
 					<div class="panel panel-default">
 						<div class="panel-heading">Query</div>
@@ -94,12 +85,8 @@
 					<table id="tb_departments"></table>
 				</div>
 				</div>
-			</li>
-		</ul>
-		<ol class="flex-control-nav flex-control-paging"></ol>
-		</section>
 	</div>
-	<footer style="margin-top: 5px;" data-reactid=".0.3">
+	<footer style="margin-bottom: 5px;" data-reactid=".0.3">
 	<div class="row" data-reactid=".0.3.0">
 		<div class="col-md-6 col-sm-6 footer-navigation"
 			data-reactid=".0.3.0.0">

@@ -13,9 +13,9 @@
         destroy-method="close">
         <property name="driverClassName" value="org.gjt.mm.mysql.Driver" />
         <property name="url"
-            value="jdbc:mysql://localhost:3306/tradeplatform?useUnicode=true&amp;characterEncoding=UTF-8" />
+            value="jdbc:mysql://202.61.86.219:3306/tradingplatform?useUnicode=true&amp;characterEncoding=UTF-8" />
         <property name="username" value="root" />
-        <property name="password" value="root" />
+        <property name="password" value="123456" />
         <!-- 连接池启动时的初始值 -->
         <property name="initialSize" value="1" />
         <!-- 连接池的最大值 -->

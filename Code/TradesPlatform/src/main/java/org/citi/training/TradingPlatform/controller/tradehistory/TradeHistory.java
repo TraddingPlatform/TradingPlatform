@@ -21,6 +21,7 @@ public class TradeHistory {
     @RequestMapping(value = "/orderHistory", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
     @ResponseBody
     public String GetTradeHistory(@RequestBody String j)throws IOException{
+    			System.out.println(j);
 	        JSONObject jo= JSONUtil.toJsonObject(j);
 	        System.out.println("transfered json tradehistory:"+jo);
 	        Integer limit=Integer.valueOf(jo.getString("limit"));

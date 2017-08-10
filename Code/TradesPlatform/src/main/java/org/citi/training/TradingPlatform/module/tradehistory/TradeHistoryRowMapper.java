@@ -20,7 +20,7 @@ public class TradeHistoryRowMapper implements RowMapper {
 		tradeHistory.setIsBuy(rs.getInt("is_buy"));
 		tradeHistory.setAmount(rs.getInt("amount"));
 		tradeHistory.setCreatetime(convertStringToDate(rs.getString("create_time")));
-		return null;
+		return tradeHistory;
 	}
 	
 	private Date convertStringToDate(String dateString) {

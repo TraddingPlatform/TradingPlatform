@@ -43,23 +43,20 @@ public class TradeHistoryOptionImp implements TradeHistoryOption {
 
 	@SuppressWarnings("unchecked")
 	public List<TradeHistory> getTradeHistory(int limit, int offset, int traderId, String symbol) {
-		int elementNumber = getTradesTotalNums (traderId);
 		StringBuilder sql = new StringBuilder("SELECT * FROM tradehistory WHERE trader_id = ");
 		sql.append(traderId);
 		sql.append(" ");
-		if(symbol != null) {
-			sql.append(", AND equity_symbol = \'");
+		System.out.println(symbol.length());
+		if (symbol.length() != 0) {
+			sql.append(" AND equity_symbol = \'");
 			sql.append(symbol);
 			sql.append("\' ");
 		}
-		int startIndex = 0;
-		if(elementNumber >= limit + (offset-1)*limit) {
-			startIndex = elementNumber - limit - (offset-1)*limit;
-		}
 		sql.append("LIMIT ");
-		sql.append(startIndex);
+		sql.append(offset);
 		sql.append(", ");
 		sql.append(limit);
+		System.out.println(sql);
 		return jdbcTemplate.query(sql.toString(),new TradeHistoryRowMapper());
 	}
 	

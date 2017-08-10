@@ -5,7 +5,11 @@ import java.util.List;
 
 import org.citi.training.TradingPlatform.module.tradehistory.TradeHistory;
 import org.citi.training.TradingPlatform.module.tradehistory.TradeHistoryOption;
-import net.sf.json.JSONArray; 
+
+import com.google.gson.Gson;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject; 
 
 public class SelectTradeHistoryImp implements SelectTradeHistory {
 
@@ -21,8 +25,9 @@ public class SelectTradeHistoryImp implements SelectTradeHistory {
 		HashMap<String, Object> returnResult = new HashMap<String, Object> ();
 		returnResult.put ("total", totalNums);
 		returnResult.put ("rows", tradeHistoryList);
-		JSONArray json = JSONArray.fromObject(returnResult);
-		return json.toString();
+		// JSONObject json = JSONObject.fromObject(returnResult);
+		String json = new Gson().toJson(returnResult);
+		return json;
 	}
 
 }
