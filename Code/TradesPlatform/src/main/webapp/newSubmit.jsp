@@ -4,17 +4,19 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Eventn | Node.js HTTP Microservices for ETL, Analytics
-	&amp; Data Processing</title>
+<title>Trading Platform
+	</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="css/build-20170702.min.css" rel="stylesheet" type="text/css"
 	media="all">
 <link href="css/css.css" rel="stylesheet" type="text/css">
 <link type="text/css" rel="stylesheet" href="css/styles.css">
+<link type="text/css" rel="stylesheet" href="css/myStyles.css">
 
 <link type="text/css" rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet"
+
 	href="css/landingpage-232d6d805d.css">
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -112,7 +114,7 @@ html>body td {
 			<div class="row">
 				<div class="col-xs-12">
 					<a href="/" class="home-link"><img alt="Logo"
-						src="/img/header-icon.png" class="logo"></a>
+						src="imgs/citi.png" class="logo logostyle"></a>
 					<ul class="menu">
 						<!-- 						<li><a href="/recipes">Service Recipes</a></li>
  -->
@@ -257,15 +259,11 @@ html>body td {
 		<ol class="flex-control-nav flex-control-paging"></ol>
 		</section>
 	</div>
-	<footer style="margin-top: 5px;" data-reactid=".0.3">
+<footer style="margin-top: 0px; background-color: #0F1A2C;" data-reactid=".0.3">
 	<div class="row" data-reactid=".0.3.0">
 		<div class="col-md-6 col-sm-6 footer-navigation"
 			data-reactid=".0.3.0.0">
-			<h3 data-reactid=".0.3.0.0.0">
-				<a class="navbar-brand crawler-logo" href="/"><b
-					class="app-name">Trading Platform</b></a>
-
-			</h3>
+		
 			<p class="company-name" data-reactid=".0.3.0.0.2">
 				<span data-reactid=".0.3.0.0.2.0">TeamName Â© </span><span
 					data-reactid=".0.3.0.0.2.1">2017</span>
@@ -273,29 +271,10 @@ html>body td {
 		</div>
 		<div class="clearfix visible-sm-block" data-reactid=".0.3.0.2"></div>
 		<div class="col-md-6 footer-about" data-reactid=".0.3.0.3">
-			<h4 data-reactid=".0.3.0.3.0">About Trade Platform</h4>
-			<p data-reactid=".0.3.0.3.1">Functions..............</p>
 		</div>
 	</div>
 	</footer>
-	<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-	<script src="/js/build-20170730.min.js"></script>
 	<!-- prettyPrint-->
-	<script>
-		(function(i, s, o, g, r, a, m) {
-			i['GoogleAnalyticsObject'] = r;
-			i[r] = i[r] || function() {
-				(i[r].q = i[r].q || []).push(arguments)
-			}, i[r].l = 1 * new Date();
-			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-			a.async = 1;
-			a.src = g;
-			m.parentNode.insertBefore(a, m)
-		})(window, document, 'script',
-				'https://www.google-analytics.com/analytics.js', 'ga');
-		ga('create', 'UA-80562000-1', 'auto');
-		ga('send', 'pageview');
-	</script>
 	<div id="lightboxOverlay" class="lightboxOverlay"
 		style="display: none;"></div>
 	<div id="lightbox" class="lightbox" style="display: none;">

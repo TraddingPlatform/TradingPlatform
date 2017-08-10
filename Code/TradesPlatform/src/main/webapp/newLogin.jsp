@@ -10,6 +10,8 @@
 <link href="css/build-20170702.min.css" rel="stylesheet"
 	type="text/css" media="all">
 <link href="css/css.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="css/myStyles.css">
+
 <link type="text/css" rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet"
@@ -27,7 +29,7 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<a href="/" class="home-link"><img alt="Logo"
-						src="/img/header-icon.png" class="logo"></a>
+						src="imgs/citi.png" class="logo logostyle"></a>
 					<ul class="menu">
 						<!-- 						<li><a href="/recipes">Service Recipes</a></li>
  -->
@@ -112,15 +114,11 @@
 		<ol class="flex-control-nav flex-control-paging"></ol>
 		</section>
 	</div>
-	<footer style="margin-top: 5px;" data-reactid=".0.3">
+	<footer style="margin-top: 0px; background-color: #0F1A2C;" data-reactid=".0.3">
 	<div class="row" data-reactid=".0.3.0">
 		<div class="col-md-6 col-sm-6 footer-navigation"
 			data-reactid=".0.3.0.0">
-			<h3 data-reactid=".0.3.0.0.0">
-				<a class="navbar-brand crawler-logo" href="/"><b
-					class="app-name">Trading Platform</b></a>
-
-			</h3>
+			
 			<p class="company-name" data-reactid=".0.3.0.0.2">
 				<span data-reactid=".0.3.0.0.2.0">TeamName © </span><span
 					data-reactid=".0.3.0.0.2.1">2017</span>
@@ -128,8 +126,6 @@
 		</div>
 		<div class="clearfix visible-sm-block" data-reactid=".0.3.0.2"></div>
 		<div class="col-md-6 footer-about" data-reactid=".0.3.0.3">
-			<h4 data-reactid=".0.3.0.3.0">About Trade Platform</h4>
-			<p data-reactid=".0.3.0.3.1">Functions..............</p>
 		</div>
 	</div>
 	</footer>
