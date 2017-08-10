@@ -17,13 +17,13 @@
 <script type="text/javascript" async="" defer=""
 	src="https://piwik.teamemo.com/piwik.js"></script>
 
-<link type="text/css" rel="stylesheet"
+<link type="text/css" rel="stylesheet" 
 	href="<%=request.getContextPath()%>/css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet"
 	href="css/landingpage-232d6d805d.css">
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
-
+<link href="css/portfolio.css" rel="stylesheet" /> 
 <script src="js/login.js"></script>
 <!-- pretty print code-->
 </head>
@@ -80,17 +80,18 @@
 						<div class="col-sm-12 text-center">
 
 
-
+<!-- 
 							<div class="sign-card portfolio-card">
-							<div id="container" class="myPie" style="height: 300px">
-								<script type="text/javascript" src="js/echarts-all-3.js"></script>
-								<script type="text/javascript" src="js/portfolio.js"></script>
-
-							</div>
 							
-							</div>
 							
-
+							</div> -->
+							<div class="table_bg">
+								<div id="container" class="myPie" style="height: 500px">
+									<script type="text/javascript" src="js/echarts-all-3.js"></script>
+									<script type="text/javascript" src="js/portfolio.js"></script>
+	
+								</div>							
+							</div>	
 
 
 						</div>

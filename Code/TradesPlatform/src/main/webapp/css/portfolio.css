@@ -1,0 +1,19 @@
+#container {
+	max-width: 800px;
+}
+
+.sign-card {
+	/* margin-top: 200px, */
+	max-width: 800px;
+	height: 500px;
+}
+
+.table_bg {
+	width: 800px;
+	height: 500px;
+	background-color: #ffffff;
+	align: 'center';
+	opacity:0.8;
+	margin:0 auto;
+	border-radius:25px;
+}

@@ -37,6 +37,6 @@ public class Portfolio {
 	public void update(TradeHistory tradeHistory) {
 		quantity += tradeHistory.getAmount();
 		principle += tradeHistory.getPrice()*tradeHistory.getAmount();
-		currentValue = quantity*TradeServer.getCurrentPrice().get(equitySymbol);
+		// currentValue = quantity*TradeServer.getCurrentPrice().get(equitySymbol);
 	}
 }
