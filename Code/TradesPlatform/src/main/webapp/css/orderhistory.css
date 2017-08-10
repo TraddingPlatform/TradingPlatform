@@ -80,3 +80,7 @@ th.specalt {
 html>body td {
 	font-size: 11px;
 }
+
+.nav-default {
+	background-color: #393939;
+}
