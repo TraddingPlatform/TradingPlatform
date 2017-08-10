@@ -6,9 +6,6 @@ function GetJsonData() {
 }
 
 function get_symbol_data() {
-	var symbol = $("#symbol").val();
-	var data = '{"symbol": symbol}';
-
 	$.ajax({
 		data : JSON.stringify(GetJsonData()),
 		contentType : "text/html;charset=utf-8",
@@ -32,6 +29,8 @@ function get_symbol_data() {
 		}
 		
 	});
+	
+
 }
 
 function process_data(data) {
@@ -85,20 +84,20 @@ function delete_table_rows() {
 	}
 }
 
-/*$(document).ready(function() {
-	var username = sessionStorage.getItem("username");
+$(document).ready(function() {
+	var username = sessionStorage.getItem("traderId");
 	if (username != null) {
 		//		alert("Trader Logined!");
 		$("#link_usename").html(username);
 	} else {
 		// alert("Trader not logined");
-		location.href = "/TradingPlatformWeb/home.html";
+		location.href = "newLogin.jsp";
 	}
-});*/
+});
 
 function logout() {
-	sessionStorage.removeItem("username");
-	location.href = "/TradingPlatformWeb/home.html";
+	sessionStorage.removeItem("traderId");
+	location.href = "newLogin.jsp";
 }
 
 function click_type(e) {
@@ -181,7 +180,6 @@ function submit_order() {
 		"price" : price,
 		"traderId" : sessionStorage.getItem("traderId"),
 	};
-	// alertObj(orderJson);
 	$.ajax({
 		type : "get",
 		url : "/TradingPlatformWeb/MakeTradeServlet",
@@ -189,13 +187,7 @@ function submit_order() {
 		async : true,
 		dataType : "JSON",
 		success : function(data) {
-			//        		var jsonarray= $.parseJSON(data);
-			//        		if(jsonarray.exists === true) {
-			//        			var symbolData = jsonarray.data;
-			//        			process_data(symbolData);
-			//        		} else {
-			//        			alert("No such sumbol. Retry.");
-			//        		}
+			
 		},
 		error : function(XMLHttpRequest, textStatus, errorThrown) {
 			alert("error");

@@ -4,8 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Trading Platform
-	</title>
+<title>Trading Platform</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="css/build-20170702.min.css" rel="stylesheet" type="text/css"
 	media="all">
@@ -16,15 +15,18 @@
 <link type="text/css" rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet"
-
 	href="css/landingpage-232d6d805d.css">
+
 <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/submit.js"></script>
 <script type="text/javascript" src="js/orderbook.js"></script>
 
 <!-- pretty print code-->
 <script type="text/javascript">
+	
 </script>
 
 <style type="text/css">
@@ -116,25 +118,17 @@ html>body td {
 					<a href="/" class="home-link"><img alt="Logo"
 						src="imgs/citi.png" class="logo logostyle"></a>
 					<ul class="menu">
-						<!-- 						<li><a href="/recipes">Service Recipes</a></li>
- -->
-						<!-- <li class="has-dropdown"><a href="#">Docs</a>
-							<ul class="subnav">
-								<li><a href="/docs/getting-started-guide">Getting
-										Started Guide</a></li>
-								<li><a href="/docs/user-guide">User Guide</a></li>
-								<li><a href="/docs/api-reference">REST API</a></li>
-							</ul></li> -->
-						<li><a href="newSubmit.jsp">Order Book</a></li>
-						<li><a href="orderhistory.jsp">Trades Display</a></li>
-						<li><a href="gtcorder.jsp">GTC Order</a></li>
 
+						<li><a href="newPortfolio.jsp">Portfolio</a></li>
+						<li><a href="newSubmit.jsp">Order Book</a></li>
+						<li><a href="newTradehistory.jsp">Trades Display</a></li>
+						<li><a href="gtcorder.jsp">GTC Order</a></li>
 					</ul>
 					<div class="text-right">
 						<ul class="social-links">
 							<!-- <li><a href="https://app.eventn.com/signup" target="_blank">Sign
 									Up</a></li> -->
-							<li><a href="newLogin.jsp" target="_blank">Login</a></li>
+							<li><a href="javascript:void(0)" target="_blank" id = "login-out" onclick = "logout(); return false;">Logout</a></li>
 						</ul>
 					</div>
 				</div>
@@ -165,7 +159,7 @@ html>body td {
 								data-reactid=".0.1.0.0.2:0.0.1.0.0">
 								<div class="sign-card submit-card" id="symbol_form"
 									data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin">
-									<h3 data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.0">Input
+									<h3 data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.0">Search
 										Equity Symbol</h3>
 									<form class="form-sign" id="symbolForm"
 										onsubmit="return false;"
@@ -174,13 +168,13 @@ html>body td {
 											type="text" required="" name="symbol" placeholder="Symbol"
 											data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.1.2"> <input
 											id="symbol-btn" onclick="get_symbol_data()"
-											class="btn btn-primary btn-block btn-lg btn-signin"
+											class="btn btn-primary btn-block btn-lg btn-signin symbol-btn"
 											type="submit" data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.1.4"
 											value="Show"></input>
 									</form>
 								</div>
 
-								<div class="symbol-table">
+								<div class="symbol-table"  >
 									<table id="mytable" cellspacing="0">
 										<tr>
 											<th scope="col" abbr="Configurations">Symbol</th>
@@ -223,30 +217,13 @@ html>body td {
 											<option value="Mrkt">MRKT</option>
 											<option value="Ioc">IOC</option>
 											<option value="Fok">FOK</option>
-											<option value="Gtc">Gtc</option>
-
-										</select> <select class="form-control submit-input" name="Strategy"
-											id="StrategySelect" onchange="checkField(this.value)">
-											<option value="No Strategy">No Strategy</option>
-											<option value="Strategy1">Strategy1</option>
-											<option value="Strategy2">Strategy2</option>
-										</select>
-										<div id="append" style="display: none">
-											<input class="form-control submit-input" type="text hidden"
-												name="profot" required="" placeholder="profit" id="profit"
-												data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.1.3"> <input
-												class="form-control submit-input" type="text hidden"
-												name="loss" required="" placeholder="loss" id="loss"
-												data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.1.3">
-										</div>
-										<!-- <button id="submit-btn"
-							class="btn btn-primary btn-block btn-lg btn-signin" type="button"
-							data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.1.4" onclick="func()">Submit</button> -->
-
-										<button id="submit-btn2"
+											<option value="Gtc">GTC</option></select>
+											<button id="submit-btn2"
 											class="btn btn-primary btn-block btn-lg btn-signin"
 											type="button" data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.1.4"
 											onclick="func();">Submit</button>
+
+										
 
 									</form>
 								</div>
@@ -260,19 +237,20 @@ html>body td {
 		<ol class="flex-control-nav flex-control-paging"></ol>
 		</section>
 	</div>
-<footer style="margin-top: 0px; background-color: #0F1A2C;" data-reactid=".0.3">
+	<footer style="margin-top: 0px; background-color: #0F1A2C;"
+		data-reactid=".0.3">
 	<div class="row" data-reactid=".0.3.0">
 		<div class="col-md-6 col-sm-6 footer-navigation"
 			data-reactid=".0.3.0.0">
-		
+
 			<p class="company-name" data-reactid=".0.3.0.0.2">
-				<span data-reactid=".0.3.0.0.2.0">TeamName Â© </span><span
-					data-reactid=".0.3.0.0.2.1">2017</span>
+				<span data-reactid=".0.3.0.0.2.0">Two Hours Â© </span><span
+					data-reactid=".0.3.0.0.2.1">2017 </span><span
+					data-reactid=".0.3.0.0.2.1">ShangHai</span>
 			</p>
 		</div>
 		<div class="clearfix visible-sm-block" data-reactid=".0.3.0.2"></div>
-		<div class="col-md-6 footer-about" data-reactid=".0.3.0.3">
-		</div>
+		<div class="col-md-6 footer-about" data-reactid=".0.3.0.3"></div>
 	</div>
 	</footer>
 	<!-- prettyPrint-->

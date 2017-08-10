@@ -6,6 +6,7 @@ function checkField(val) {
 	}
 }
 
+
 /*
  * $(document).ready(function() { $("#submit-btn").click(function() { var
  * equitySymbol = $("#equitySymbol").val(); alert(equitySymbol); var jsonUser = {

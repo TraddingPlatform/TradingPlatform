@@ -28,6 +28,8 @@ function login() {
 		success : function(map) {
 			console.log(JSON.stringify(map));
 			sessionStorage.setItem("traderId",map.traderId); 
+			sessionStorage.setItem("username",map.username); 
+
 			location.href = "newSubmit.jsp";
 		}
 	});

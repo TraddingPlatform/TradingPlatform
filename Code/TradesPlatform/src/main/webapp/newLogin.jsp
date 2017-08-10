@@ -7,8 +7,8 @@
 <title>Eventn | Node.js HTTP Microservices for ETL, Analytics
 	&amp; Data Processing</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css/build-20170702.min.css" rel="stylesheet"
-	type="text/css" media="all">
+<link href="css/build-20170702.min.css" rel="stylesheet" type="text/css"
+	media="all">
 <link href="css/css.css" rel="stylesheet" type="text/css">
 <link type="text/css" rel="stylesheet" href="css/myStyles.css">
 
@@ -31,18 +31,10 @@
 					<a href="/" class="home-link"><img alt="Logo"
 						src="imgs/citi.png" class="logo logostyle"></a>
 					<ul class="menu">
-						<!-- 						<li><a href="/recipes">Service Recipes</a></li>
- -->
-						<!-- <li class="has-dropdown"><a href="#">Docs</a>
-							<ul class="subnav">
-								<li><a href="/docs/getting-started-guide">Getting
-										Started Guide</a></li>
-								<li><a href="/docs/user-guide">User Guide</a></li>
-								<li><a href="/docs/api-reference">REST API</a></li>
-							</ul></li> -->
-						<li><a href="newSubmit.jsp">OrderBook</a></li>
-						<li><a href="/blog">TradesDisplay</a></li>
-						
+						<li><a href="newPortfolio.jsp">Portfolio</a></li>
+						<li><a href="newSubmit.jsp">Order Book</a></li>
+						<li><a href="orderhistory.jsp">Trades Display</a></li>
+						<li><a href="gtcorder.jsp">GTC Order</a></li>
 					</ul>
 					<div class="text-right">
 						<ul class="social-links">
@@ -74,7 +66,7 @@
 					<div class="row">
 						<div class="col-sm-12 text-center">
 							<h1 class="text-white">
-								Welcom Trading Platform
+								Welcome to SnowBall Trading Platform
 								<p class="text-white super-lead"></p>
 								<!-- <a href="/docs/getting-started-guide" class="btn btn-white">Learn
 									More</a><a href="https://app.eventn.com/signup" target="_blank"
@@ -83,7 +75,7 @@
 
 							<div class="sign-card" id="signin_form"
 								data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin">
-								<h3 data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.0">Sign in</h3>
+								<h3 data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.0"></h3>
 								<form class="form-sign" method="post"
 									data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.1">
 									<input type="hidden" name="_form" value="login"
@@ -98,8 +90,8 @@
 										data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.1.3">
 									<button id="signin-btn"
 										class="btn btn-primary btn-block btn-lg btn-signin"
-										type="submit" data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.1.4" onclick="login(); return false;">Sign
-										in</button>
+										type="submit" data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.1.4"
+										onclick="login(); return false;">Login in</button>
 									<!-- <a class="forgot-password-link" href="/resetPassword"
 							data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.1.5">Forgot
 							password?</a> -->
@@ -114,39 +106,22 @@
 		<ol class="flex-control-nav flex-control-paging"></ol>
 		</section>
 	</div>
-	<footer style="margin-top: 0px; background-color: #0F1A2C;" data-reactid=".0.3">
+	<footer style="margin-top: 0px; background-color: #0F1A2C;"
+		data-reactid=".0.3">
 	<div class="row" data-reactid=".0.3.0">
 		<div class="col-md-6 col-sm-6 footer-navigation"
 			data-reactid=".0.3.0.0">
-			
+
 			<p class="company-name" data-reactid=".0.3.0.0.2">
-				<span data-reactid=".0.3.0.0.2.0">TeamName © </span><span
-					data-reactid=".0.3.0.0.2.1">2017</span>
+				<span data-reactid=".0.3.0.0.2.0">Two Hours © </span><span
+					data-reactid=".0.3.0.0.2.1">2017 </span><span
+					data-reactid=".0.3.0.0.2.1">ShangHai</span>
 			</p>
 		</div>
 		<div class="clearfix visible-sm-block" data-reactid=".0.3.0.2"></div>
-		<div class="col-md-6 footer-about" data-reactid=".0.3.0.3">
-		</div>
+		<div class="col-md-6 footer-about" data-reactid=".0.3.0.3"></div>
 	</div>
-	</footer>
-	<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-	<script src="/js/build-20170730.min.js"></script>
-	<!-- prettyPrint-->
-	<script>
-		(function(i, s, o, g, r, a, m) {
-			i['GoogleAnalyticsObject'] = r;
-			i[r] = i[r] || function() {
-				(i[r].q = i[r].q || []).push(arguments)
-			}, i[r].l = 1 * new Date();
-			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-			a.async = 1;
-			a.src = g;
-			m.parentNode.insertBefore(a, m)
-		})(window, document, 'script',
-				'https://www.google-analytics.com/analytics.js', 'ga');
-		ga('create', 'UA-80562000-1', 'auto');
-		ga('send', 'pageview');
-	</script>
+	</footer>	
 	<div id="lightboxOverlay" class="lightboxOverlay"
 		style="display: none;"></div>
 	<div id="lightbox" class="lightbox" style="display: none;">

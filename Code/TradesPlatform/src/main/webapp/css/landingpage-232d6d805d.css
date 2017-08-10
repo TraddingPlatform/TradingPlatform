@@ -7513,6 +7513,7 @@ h2 .red:hover {
   background: rgba(248, 248, 248, 0.7);
   box-shadow: rgba(0, 0, 0, 0.0784314) 1px 3px 1px;
   border: 1px solid #dbe3e7;
+  
 }
 .sign-card .profile-img-card {
   width: 96px;
@@ -7589,6 +7590,8 @@ h2 .red:hover {
   transition: all 0.218s;
   padding: 0;
   margin-top: 40px;
+  margin-left: 0px;
+  
 }
 .testnow-card {
   /*max-width: 265px;*/
