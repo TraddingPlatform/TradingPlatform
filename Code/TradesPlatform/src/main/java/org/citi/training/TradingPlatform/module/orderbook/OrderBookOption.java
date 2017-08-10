@@ -16,5 +16,5 @@ public interface OrderBookOption {
 	
 	public List<OrderBook> getOrderBookListByTraderId(int traderId);
 	
-	public List<OrderBook> getOrderBookList();
+	public List<OrderBook> getOrderBookList(String symbol);
 }

@@ -1,10 +1,13 @@
 package org.citi.training.TradingPlatform.controller.getorderbook;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import org.citi.training.TradingPlatform.module.orderbook.OrderBook;
 import org.citi.training.TradingPlatform.module.orderbook.OrderBookOption;
+
+import net.sf.json.JSONArray;
 
 public class GetOrderBookImp implements GetOrderBook {
 
@@ -14,8 +17,8 @@ public class GetOrderBookImp implements GetOrderBook {
 		this.orderBookOption = orderBookOption;
 	}
 
-	public String getOrderBook() {
-		List<OrderBook> orderBookList = orderBookOption.getOrderBookList();
+	public String getOrderBook(String symbol) {
+		List<OrderBook> orderBookList = orderBookOption.getOrderBookList(symbol);
 		List<OrderBook> buyOrderBook = new ArrayList<OrderBook>();
 		List<OrderBook> sellOrderBook = new ArrayList<OrderBook>();
 		for(OrderBook orderBook : orderBookList) {
@@ -24,8 +27,34 @@ public class GetOrderBookImp implements GetOrderBook {
 			else 
 				sellOrderBook.add(orderBook);
 		}
-		
-		return null;
+		buyOrderBook.sort(new MyASCComparator());
+		sellOrderBook.sort(new MyDESCComparator());
+		JSONArray buyOrderBookJson = JSONArray.fromObject(buyOrderBook);
+		JSONArray sellOrderBookJson = JSONArray.fromObject(sellOrderBook);
+		StringBuilder jsonResult = new StringBuilder();
+		jsonResult.append(buyOrderBookJson);
+		jsonResult.append("\n");
+		jsonResult.append(sellOrderBookJson);
+		return jsonResult.toString();
+	}
+	
+	private class MyASCComparator implements Comparator<OrderBook> {
+		public int compare(OrderBook orderBook1, OrderBook orderBook2) {
+			if(orderBook1.getPrice() < orderBook2.getPrice())
+				return -1;
+			if(orderBook1.getPrice() > orderBook2.getPrice()) 
+				return 1;
+			return 0;
+		}
 	}
 
+	private class MyDESCComparator implements Comparator<OrderBook> {
+		public int compare(OrderBook orderBook1, OrderBook orderBook2) {
+			if(orderBook1.getPrice() > orderBook2.getPrice())
+				return -1;
+			if(orderBook1.getPrice() < orderBook2.getPrice()) 
+				return 1;
+			return 0;
+		}
+	}
 }

@@ -75,8 +75,8 @@ public class OrderBookOptionImp implements OrderBookOption {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<OrderBook> getOrderBookList() {
-		List<OrderBook> list = jdbcTemplate.query("select * from orderbook",new OrderBookRowMapper());
+	public List<OrderBook> getOrderBookList(String symbol) {
+		List<OrderBook> list = jdbcTemplate.query("select * from orderbook WHERE equity_symbol = "+symbol ,new OrderBookRowMapper());
 		return list;
 	}
 	
