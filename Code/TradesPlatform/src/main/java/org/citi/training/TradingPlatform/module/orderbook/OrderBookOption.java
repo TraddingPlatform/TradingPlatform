@@ -1,5 +1,7 @@
 package org.citi.training.TradingPlatform.module.orderbook;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public interface OrderBookOption {
@@ -17,4 +19,6 @@ public interface OrderBookOption {
 	public List<OrderBook> getOrderBookListByTraderId(int traderId);
 	
 	public List<OrderBook> getOrderBookList(String symbol);
+	
+	public HashMap<String, List<OrderBook>> getAllSymbolOrders (String symbol);
 }

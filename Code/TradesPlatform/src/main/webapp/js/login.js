@@ -8,7 +8,6 @@ function GetJsonData() {
 }
 
 function login() {
-	alert("11");
 	var username = $("#username").val();
 	var j = {
 		"username" : username
@@ -30,7 +29,6 @@ function login() {
 			console.log(JSON.stringify(map));
 			sessionStorage.setItem("traderId",map.traderId); 
 			location.href = "newSubmit.jsp";
-			alert(map.message);
 		}
 	});
 }

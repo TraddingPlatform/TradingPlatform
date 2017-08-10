@@ -32,7 +32,6 @@ public class Login {
     @ResponseBody
     public String login(@RequestBody String j)throws IOException{
 	        JSONObject jo= JSONUtil.toJsonObject(j);
-	        System.out.println("transfered jsonaaaSlogin:"+jo);
 	        String username=jo.getString("username");
 	        String inputPassword=jo.getString("inputPassword");
 	        Map<String,Object> map=new HashMap<String,Object>();

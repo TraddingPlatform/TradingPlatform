@@ -1,15 +1,25 @@
+function GetJsonData() {
+	var json = {
+		"symbol" : $("#symbol").val(),
+	};
+	return json;
+}
+
 function get_symbol_data() {
+	var symbol = $("#symbol").val();
+	var data = '{"symbol": symbol}';
+
 	$.ajax({
-		type : "get",
-		url : "/TradingPlatformWeb/OrderBookServlet",
-		data : $("#symbolForm").serialize(),
-		async : true,
-		dataType : "text",
+		data : JSON.stringify(GetJsonData()),
+		contentType : "text/html;charset=utf-8",
+		type : "POST",
+		dataType : "json",
+		url : "orderBook.spring",
 		success : function(data) {
-			var jsonarray = $.parseJSON(data);
-			if (jsonarray.exists === true) {
-				var symbolData = jsonarray.data;
+			if (data.exists === true) {
+				var symbolData = data.orderlist;
 				process_data(symbolData);
+
 			} else {
 				alert("No such sumbol. Retry.");
 			}
@@ -20,6 +30,7 @@ function get_symbol_data() {
 			alert(XMLHttpRequest.readyState);
 			alert(textStatus);
 		}
+		
 	});
 }
 
@@ -33,13 +44,13 @@ function process_data(data) {
 		for (let i = 0; i < askLength; i++) {
 			var bidItem = bidData[i];
 			var askItem = askData[i];
-			insert_row(bidItem.symbol, bidItem.quanlity, bidItem.price,
-					askItem.price, askItem.quanlity);
+			insert_row(bidItem.equitySymbol, bidItem.quantity, bidItem.price,
+					askItem.price, askItem.quantity);
 		}
 
 		for (let i = askLength; i < bidLength; i++) {
 			var bidItem = bidData[i];
-			insert_row(bidItem.symbol, bidItem.quanlity, bidItem.price, "", "");
+			insert_row(bidItem.equitySymbol, bidItem.quantity, bidItem.price, "", "");
 		}
 	} else {
 		for (let i = 0; i < bidLength; i++) {
@@ -74,7 +85,7 @@ function delete_table_rows() {
 	}
 }
 
-$(document).ready(function() {
+/*$(document).ready(function() {
 	var username = sessionStorage.getItem("username");
 	if (username != null) {
 		//		alert("Trader Logined!");
@@ -83,7 +94,7 @@ $(document).ready(function() {
 		// alert("Trader not logined");
 		location.href = "/TradingPlatformWeb/home.html";
 	}
-});
+});*/
 
 function logout() {
 	sessionStorage.removeItem("username");

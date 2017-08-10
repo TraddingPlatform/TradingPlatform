@@ -19,6 +19,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/submit.js"></script>
+<script type="text/javascript" src="js/orderbook.js"></script>
 
 <!-- pretty print code-->
 <script type="text/javascript">
