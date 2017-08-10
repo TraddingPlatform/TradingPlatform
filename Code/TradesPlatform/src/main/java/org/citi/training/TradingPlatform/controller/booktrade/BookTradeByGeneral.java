@@ -105,9 +105,10 @@ public abstract class BookTradeByGeneral implements BookTrade {
 	}
 	
 	protected void deleteHightPrice(double price) {
-		for(OrderBook orderBook : orderBookList) {
-			if(orderBook.getPrice() < price) {
-				orderBookList.remove(orderBook);
+		Iterator<OrderBook> iterator = orderBookList.iterator();
+		while(iterator.hasNext()) {
+			if(iterator.next().getPrice() < price) {
+				iterator.remove();
 			}
 		}
 	}

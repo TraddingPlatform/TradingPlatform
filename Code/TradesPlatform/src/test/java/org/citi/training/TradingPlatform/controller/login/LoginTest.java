@@ -1,21 +1,24 @@
-package org.citi.training.TradingPlatform.controllertest;
+package org.citi.training.TradingPlatform.controller.login;
 
 import static org.junit.Assert.*;
 
 import org.citi.training.TradingPlatform.module.trader.SelectSpecifiedTraderImp;
 import org.citi.training.TradingPlatform.module.trader.Trader;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.stereotype.Controller;
 
-@Controller // @Controller 代表本Java类是controller控制层
 public class LoginTest {
 
-    
-    @Test
+	private ApplicationContext ctx;
+	@Before
+	public void setUp() throws Exception {
+		ctx = new ClassPathXmlApplicationContext("bean.xml");
+	}
+
+	@Test
     public void loginTest(){
-    	ApplicationContext ctx = new ClassPathXmlApplicationContext("bean.xml");
     	SelectSpecifiedTraderImp selectSpecifiedTraderServiceImp = (SelectSpecifiedTraderImp) ctx.getBean("traderService");
     	String username = "admin";
 		Trader trader = selectSpecifiedTraderServiceImp.getTrader(username);
@@ -23,5 +26,4 @@ public class LoginTest {
 		assertEquals("admin",password);
 		
     }
-
 }
