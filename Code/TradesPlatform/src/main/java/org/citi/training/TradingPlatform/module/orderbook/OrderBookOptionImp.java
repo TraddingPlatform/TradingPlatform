@@ -6,11 +6,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+=======
+import java.sql.ResultSet;
+import java.sql.SQLException;
+>>>>>>> 687f7c3596b4ed879672f2ebda82e05a3ec75499
 import java.util.List;
 
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 public class OrderBookOptionImp implements OrderBookOption {
 
@@ -23,6 +28,12 @@ public class OrderBookOptionImp implements OrderBookOption {
 	public void insertIntoOrderBook(OrderBook orderBook) {
 		StringBuilder sql = new StringBuilder(
 				"INSERT INTO `OrderBook` (`equity_symbol`, `quantity`, `is_buy`, `price`, `trader_id`) VALUES");
+    public void setDataSource(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
+    }
+    
+    public void insertIntoOrderBook(OrderBook orderBook) {
+    	StringBuilder sql = new StringBuilder("INSERT INTO `orderbook` (`equity_symbol`, `quantity`, `is_buy`, `price`, `trader_id`) VALUES");
 		sql.append("(\'");
 		sql.append(orderBook.getEquitySymbol());
 		sql.append("\',");
@@ -47,6 +58,19 @@ public class OrderBookOptionImp implements OrderBookOption {
 		jdbcTemplate.execute(sql.toString());
 	}
 
+	public boolean deleteOrderBooks(int orderBookId) {
+		StringBuilder sql = new StringBuilder("DELETE FROM orderbook WHERE id = ");
+		sql.append(orderBookId);
+		try {
+			jdbcTemplate.execute(sql.toString());
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			return false;
+		}
+		return true;
+	}
+	
 	public void modifyOrderBookQuantity(OrderBook orderBook) {
 		StringBuilder sql = new StringBuilder("UPDATE orderbook SET quantity = ");
 		sql.append(orderBook.getQuantity());
@@ -84,6 +108,25 @@ public class OrderBookOptionImp implements OrderBookOption {
 				new OrderBookRowMapper());
 		return list;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<OrderBook> getOrderBookListByTraderId(int limit, int offset, int traderId, String symbol) {
+		StringBuilder sql = new StringBuilder("SELECT * FROM orderbook WHERE trader_id = ");
+		sql.append(traderId);
+		sql.append(" ");
+		System.out.println(symbol.length());
+		if (symbol.length() != 0) {
+			sql.append(" AND equity_symbol = \'");
+			sql.append(symbol);
+			sql.append("\' ");
+		}
+		sql.append("LIMIT ");
+		sql.append(offset);
+		sql.append(", ");
+		sql.append(limit);
+		System.out.println(sql);
+		return jdbcTemplate.query(sql.toString(),new OrderBookRowMapper());
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<OrderBook> getOrderBookList(String symbol) {
@@ -107,41 +150,20 @@ public class OrderBookOptionImp implements OrderBookOption {
 
 		return result;
 	}
-
-	/*
-	 * public HashMap<String, ArrayList<OrderBook>> getAllSymbolOrders (String
-	 * symbol) throws ClassNotFoundException, SQLException {
-	 * ArrayList<OrderBook> returnDataType1 = new ArrayList<> ();
-	 * ArrayList<OrderBook> returnDataType0 = new ArrayList<> (); Connection
-	 * connection = MySQLConnUtils.getMySQLConnection (); String sql1 =
-	 * "select * from OrderBook where symbol = ? and type=1 order by price";
-	 * PreparedStatement preparedStatement1 = connection.prepareStatement
-	 * (sql1); preparedStatement1.setString (1, symbol); ResultSet rs1 =
-	 * preparedStatement1.executeQuery (); while (rs1.next()){ OrderBook
-	 * tradeBook = new OrderBook (); tradeBook.setId (rs1.getInt (1));
-	 * tradeBook.setSymbol (rs1.getString (2)); tradeBook.setQuanlity
-	 * (rs1.getInt (3)); tradeBook.setType (rs1.getInt (4)); tradeBook.setPrice
-	 * (rs1.getDouble (5)); returnDataType1.add (tradeBook); }
-	 * 
-	 * System.out.println (returnDataType1);
-	 * 
-	 * String sql0 =
-	 * "select * from OrderBook where symbol = ? and type=0 order by price desc"
-	 * ; PreparedStatement preparedStatement0 = connection.prepareStatement
-	 * (sql0); preparedStatement0.setString (1, symbol); ResultSet rs0 =
-	 * preparedStatement0.executeQuery (); while (rs0.next()){ OrderBook
-	 * tradeBook = new OrderBook (); tradeBook.setId (rs0.getInt (1));
-	 * tradeBook.setSymbol (rs0.getString (2)); tradeBook.setQuanlity
-	 * (rs0.getInt (3)); tradeBook.setType (rs0.getInt (4)); tradeBook.setPrice
-	 * (rs0.getDouble (5)); returnDataType0.add (tradeBook); }
-	 * System.out.println (returnDataType0);
-	 * 
-	 * rs1.close(); preparedStatement1.close(); rs0.close();
-	 * preparedStatement0.close(); connection.close(); HashMap<String,
-	 * ArrayList<OrderBook>> result = new HashMap<> (); result.put ("bid",
-	 * returnDataType1); result.put ("ask", returnDataType0);
-	 * 
-	 * return result; }
-	 */
-
+	
+	@SuppressWarnings("rawtypes")
+	private class CountRowMapper implements RowMapper {
+		public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+			Integer count= rs.getInt("COUNT(*)");
+			return count;
+		}
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public int getOrderBookTotalNums (int traderId) {
+		List<Integer> elementNumberList = jdbcTemplate.query("SELECT COUNT(*) FROM orderbook where trader_id=" + traderId, new CountRowMapper());
+        int elementNumber = elementNumberList.get(0);
+        return elementNumber;
+	}
 }

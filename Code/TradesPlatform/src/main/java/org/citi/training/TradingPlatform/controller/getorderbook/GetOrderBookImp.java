@@ -2,10 +2,13 @@ package org.citi.training.TradingPlatform.controller.getorderbook;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 
 import org.citi.training.TradingPlatform.module.orderbook.OrderBook;
 import org.citi.training.TradingPlatform.module.orderbook.OrderBookOption;
+
+import com.google.gson.Gson;
 
 import net.sf.json.JSONArray;
 
@@ -38,6 +41,17 @@ public class GetOrderBookImp implements GetOrderBook {
 		jsonResult.append(sellOrderBookJson);
 		jsonResult.append("]}");
 		return jsonResult.toString();
+	}
+	
+	public String getOrderBookByTraderId(int limit, int offset, int traderId, String symbol) {
+		List<OrderBook> orderBooks = orderBookOption.getOrderBookListByTraderId(limit, offset, traderId, symbol);
+		int totalNums = orderBookOption.getOrderBookTotalNums (traderId);
+		HashMap<String, Object> returnResult = new HashMap<String, Object> ();
+		returnResult.put ("total", totalNums);
+		returnResult.put ("rows", orderBooks);
+		// JSONObject json = JSONObject.fromObject(returnResult);
+		String json = new Gson().toJson(returnResult);
+		return json;
 	}
 	
 	private class MyASCComparator implements Comparator<OrderBook> {

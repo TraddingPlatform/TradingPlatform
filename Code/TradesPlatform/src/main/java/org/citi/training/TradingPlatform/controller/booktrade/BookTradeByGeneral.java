@@ -9,6 +9,7 @@ import org.citi.training.TradingPlatform.module.orderbook.OrderBook;
 import org.citi.training.TradingPlatform.module.orderbook.OrderBookOption;
 import org.citi.training.TradingPlatform.module.tradehistory.TradeHistory;
 import org.citi.training.TradingPlatform.module.tradehistory.TradeHistoryOption;
+import org.citi.training.TradingPlatform.server.TradeServer;
 
 public abstract class BookTradeByGeneral implements BookTrade {
 
@@ -77,8 +78,14 @@ public abstract class BookTradeByGeneral implements BookTrade {
 			trade.setIsBuy(anotherIsBuy);
 			trades.add(trade);
 			trades.add(tradeAnother);
+			recordMarketPrice(trade);
 		}
 		tradeHistoryOption.insertIntoTradeHistory(trades);
+	}
+	
+	private void recordMarketPrice(TradeHistory trade) {
+		TradeServer.getCurrentPrice().put(trade.getEquitySymbol(),trade.getPrice());
+		TradeServer.getSymbolSet().add(trade.getEquitySymbol());
 	}
 	
 	protected final void deleteOrderBook(List<OrderBook> matchOrderBookList) {

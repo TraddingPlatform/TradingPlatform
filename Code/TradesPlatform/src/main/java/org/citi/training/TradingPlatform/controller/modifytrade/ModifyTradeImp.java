@@ -23,4 +23,8 @@ public class ModifyTradeImp implements ModifyTrade {
 		}
 		return true;
 	}
+
+	public boolean cancelTrade(int orderBookId) {
+		return orderBookOption.deleteOrderBooks(orderBookId);
+	}
 }

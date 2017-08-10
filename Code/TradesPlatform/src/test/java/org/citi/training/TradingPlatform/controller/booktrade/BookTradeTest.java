@@ -43,4 +43,17 @@ public class BookTradeTest {
 		boolean result = bookTrade.bookTrade(1, "ABT", 1, 100.67, false);
 		assertEquals(result,false);
 	}
+	
+	@Test
+	public void testBookTradeIoc() {
+		bookTrade = (BookTrade) ctx.getBean("bookTradeByIoc");
+		boolean result = bookTrade.bookTrade(1, "ABT", 1, 1, true);
+		assertEquals(result,true);
+	}
+	@Test
+	public void testBookTradeMrkt() {
+		bookTrade = (BookTrade) ctx.getBean("bookTradeByMrkt");
+		boolean result = bookTrade.bookTrade(1, "ABT", 1, 1, true);
+		assertEquals(result,true);
+	}
 }
