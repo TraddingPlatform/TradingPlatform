@@ -43,6 +43,19 @@ public class OrderBookOptionImp implements OrderBookOption {
 		jdbcTemplate.execute(sql.toString());
 	}
 
+	public boolean deleteOrderBooks(int orderBookId) {
+		StringBuilder sql = new StringBuilder("DELETE FROM orderbook WHERE id = ");
+		sql.append(orderBookId);
+		try {
+			jdbcTemplate.execute(sql.toString());
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			return false;
+		}
+		return true;
+	}
+	
 	public void modifyOrderBookQuantity(OrderBook orderBook) {
 		StringBuilder sql = new StringBuilder("UPDATE orderbook SET quantity = ");
 		sql.append(orderBook.getQuantity());
@@ -119,4 +132,5 @@ public class OrderBookOptionImp implements OrderBookOption {
         int elementNumber = elementNumberList.get(0);
         return elementNumber;
 	}
+
 }

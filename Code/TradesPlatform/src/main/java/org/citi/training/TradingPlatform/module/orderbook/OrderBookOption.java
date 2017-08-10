@@ -8,6 +8,8 @@ public interface OrderBookOption {
 	
 	public void deleteOrderBooks(double lowestPrice, double hightestPrice, int isBuy);
 	
+	public boolean deleteOrderBooks(int orderBookId);
+	
 	public void modifyOrderBookQuantity(OrderBook orderBook);
 	
 	public void modifyOrderBook(OrderBook orderBook);
