@@ -8,12 +8,12 @@ import org.citi.training.TradingPlatform.module.orderbook.OrderBook;
 public class BookTradeByFok extends BookTradeByGeneral {
 
 	@Override
-	protected List<OrderBook> getMatchOrderBookList(int quantity, double price, boolean isBuy)
+	protected List<OrderBook> getMatchOrderBookList(int quantity, double price, boolean isBuy, int traderId)
 			throws CloneNotSupportedException {
 		if(isBuy)
-			deleteLowPrice(price);
-		else
 			deleteHightPrice(price);
+		else
+			deleteLowPrice(price);
 		
 		List<OrderBook> matchOrderBookList = new ArrayList<OrderBook>();
 		OrderBook orderBook = null;

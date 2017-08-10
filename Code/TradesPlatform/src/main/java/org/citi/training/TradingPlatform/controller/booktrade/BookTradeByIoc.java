@@ -8,7 +8,7 @@ import org.citi.training.TradingPlatform.module.orderbook.OrderBook;
 public class BookTradeByIoc extends BookTradeByGeneral {
 
 	@Override
-	protected List<OrderBook> getMatchOrderBookList(int quantity, double price, boolean isBuy)
+	protected List<OrderBook> getMatchOrderBookList(int quantity, double price, boolean isBuy, int traderId)
 			throws CloneNotSupportedException {
 		List<OrderBook> matchOrderBookList = new ArrayList<OrderBook>();
 		OrderBook orderBook = null;

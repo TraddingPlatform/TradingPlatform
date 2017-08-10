@@ -14,19 +14,33 @@ public class BookTradeTest {
 	@Before
 	public void setUp() throws Exception {
 		ctx = new ClassPathXmlApplicationContext("bean.xml");
-		bookTrade = (BookTrade) ctx.getBean("bookTradeByFok");
 	}
 
 	@Test
 	public void testBookTradeFokFill() {
+		bookTrade = (BookTrade) ctx.getBean("bookTradeByFok");
 		boolean result = bookTrade.bookTrade(1, "ABT", 1, 100.67, true);
 		assertEquals(result,true);
 	}
 
 	@Test
 	public void testBookTradeFokKill() {
+		bookTrade = (BookTrade) ctx.getBean("bookTradeByFok");
 		boolean result = bookTrade.bookTrade(1, "ABT", 1, 100.67, false);
 		assertEquals(result,false);
 	}
 	
+	@Test
+	public void testBookTradeGtcFill() {
+		bookTrade = (BookTrade) ctx.getBean("bookTradeByGtc");
+		boolean result = bookTrade.bookTrade(1, "ABT", 1, 100.67, true);
+		assertEquals(result,true);
+	}
+	
+	@Test
+	public void testBookTradeGtcUnfill() {
+		bookTrade = (BookTrade) ctx.getBean("bookTradeByGtc");
+		boolean result = bookTrade.bookTrade(1, "ABT", 1, 100.67, false);
+		assertEquals(result,false);
+	}
 }
