@@ -39,6 +39,7 @@ public class Submit {
 	        Double price=Double.valueOf(jo.getString("price"));
 	        boolean isBuy=jo.getString("isBuy").equals("BUY");
 			boolean success = bookTrade.bookTrade(traderId, equitySymbol, quantity, price, isBuy);
+			
 	        map.put("message",success);
 	        
 	        return JSONUtil.toJsonString(map);

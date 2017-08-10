@@ -43,8 +43,7 @@ public class TradeHistoryOptionImp implements TradeHistoryOption {
 
 	@SuppressWarnings("unchecked")
 	public List<TradeHistory> getTradeHistory(int limit, int offset, int traderId, String symbol) {
-		List<Integer> elementNumberList = jdbcTemplate.query("SELECT COUNT(*) FROM tradehistory",new CountRowMapper());
-		int elementNumber = elementNumberList.get(0);
+		int elementNumber = getTradesTotalNums (traderId);
 		StringBuilder sql = new StringBuilder("SELECT * FROM tradehistory WHERE trader_id = ");
 		sql.append(traderId);
 		sql.append(" ");
@@ -78,4 +77,13 @@ public class TradeHistoryOptionImp implements TradeHistoryOption {
 		sql.append(traderId);
 		return jdbcTemplate.query(sql.toString(),new TradeHistoryRowMapper());
 	}
+
+    @SuppressWarnings("unchecked")
+    public int getTradesTotalNums (int traderId)
+    {
+        // TODO Auto-generated method stub
+        List<Integer> elementNumberList = jdbcTemplate.query("SELECT COUNT(*) FROM tradehistory",new CountRowMapper());
+        int elementNumber = elementNumberList.get(0);
+        return elementNumber;
+    }
 }
