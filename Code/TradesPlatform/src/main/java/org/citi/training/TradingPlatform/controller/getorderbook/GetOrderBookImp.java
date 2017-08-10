@@ -32,9 +32,11 @@ public class GetOrderBookImp implements GetOrderBook {
 		JSONArray buyOrderBookJson = JSONArray.fromObject(buyOrderBook);
 		JSONArray sellOrderBookJson = JSONArray.fromObject(sellOrderBook);
 		StringBuilder jsonResult = new StringBuilder();
+		jsonResult.append("{bid:[");
 		jsonResult.append(buyOrderBookJson);
-		jsonResult.append("\n");
+		jsonResult.append("],ask:[");
 		jsonResult.append(sellOrderBookJson);
+		jsonResult.append("]}");
 		return jsonResult.toString();
 	}
 	
