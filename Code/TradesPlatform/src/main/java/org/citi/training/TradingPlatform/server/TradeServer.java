@@ -43,7 +43,7 @@ public class TradeServer implements HttpSessionListener{
 			boolean isBuy = rand.nextInt(2)==1 ? true : false;
 			bookTrade.bookTrade(randTraderId, randSymbol, randQuantity, price, isBuy);
 			try {
-				Thread.sleep(100);
+				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
