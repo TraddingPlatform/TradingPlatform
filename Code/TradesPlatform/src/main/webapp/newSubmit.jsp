@@ -122,7 +122,7 @@ html>body td {
 						<li><a href="newPortfolio.jsp">Portfolio</a></li>
 						<li><a href="newSubmit.jsp">Order Book</a></li>
 						<li><a href="newTradehistory.jsp">Trades Display</a></li>
-						<li><a href="gtcorder.jsp">GTC Order</a></li>
+						<li><a href="newGtcOrder.jsp">GTC Order</a></li>
 					</ul>
 					<div class="text-right">
 						<ul class="social-links">
@@ -174,7 +174,7 @@ html>body td {
 									</form>
 								</div>
 
-								<div class="symbol-table"  >
+								<div class="symbol-table">
 									<table id="mytable" cellspacing="0">
 										<tr>
 											<th scope="col" abbr="Configurations">Symbol</th>

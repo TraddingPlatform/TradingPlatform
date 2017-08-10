@@ -24,8 +24,10 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script src="bootstrap-table-master/src/bootstrap-table.js"></script>
-<link href="bootstrap-table-master/src/bootstrap-table.css" rel="stylesheet" />
+<link href="bootstrap-table-master/src/bootstrap-table.css"
+	rel="stylesheet" />
 <script src="js/orderhistory.js"></script>
+<script type="text/javascript" src="js/orderbook.js"></script>
 
 <!-- pretty print code-->
 </head>
@@ -42,14 +44,14 @@
 						<li><a href="newPortfolio.jsp">Portfolio</a></li>
 						<li><a href="newSubmit.jsp">Order Book</a></li>
 						<li><a href="newTradehistory.jsp">Trades Display</a></li>
-						<li><a href="gtcorder.jsp">GTC Order</a></li>
-
+						<li><a href="newGtcOrder.jsp">GTC Order</a></li>
 					</ul>
 					<div class="text-right">
 						<ul class="social-links">
 							<!-- <li><a href="https://app.eventn.com/signup" target="_blank">Sign
 									Up</a></li> -->
-							<li><a href="newLogin.jsp" target="_blank">Login</a></li>
+							<li><a href="javascript:void(0)" target="_blank"
+								id="login-out" onclick="logout(); return false;">Logout</a></li>
 
 						</ul>
 					</div>
@@ -72,77 +74,42 @@
 					<img alt="Analytics Microservice" src="imgs/background.jpg"
 						class="background-image" draggable="false" style="display: none;">
 				</div>
-				
+
 				<div class="container vertical-align">
 					<div class="row">
-						<div class="col-sm-12 text-center" class = "sign-card">
-						
+						<div class="col-sm-12 text-center" class="sign-card">
+
 
 							<div class="trade-history-card" id="signin_form"
 								data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin">
 								<h3 data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.0"></h3>
 								<form id="formSearch" class="form-horizontal">
-										<div class="form-group" style="margin-top: 15px">
-											<label class="control-label col-sm-1"
-												for="txt_search_departmentname">Symbol</label>
-											<div class="col-sm-3">
-												<input type="text" class="form-control"
-													id="txt_search_symbol">
-											</div>
-
-											<div class="col-sm-4" style="text-align: left;">
-												<button type="button" style="margin-left: 50px"
-													id="btn_query" class="btn btn-primary" onclick="search();">Search</button>
-											</div>
+									<div class="col-md-8"
+										style="margin-top: 0px; margin-bottom: 10px">
+										<label class="control-label col-md-2"
+											for="txt_search_departmentname">SYMBOL</label>
+										<div class="control-label col-md-4">
+											<input type="text" class="form-control"
+												id="txt_search_symbol">
 										</div>
-									</form>
-														<table id="tb_departments"></table>
-									
+
+
+										<div class="control-label col-md-2" style="text-align: left;">
+											<button type="button"
+												style="margin-left: 50px; margin-top: 0px" id="btn_query"
+												class="btn btn-primary" onclick="search();">Search</button>
+										</div>
+									</div>
+								</form>
+								<table id="tb_departments" border="0"></table>
+
 							</div>
 
 
 						</div>
 					</div>
 				</div>
-				
-				
-				
-			<!-- 	<div class="main-container">
-					<div class="order-table-bg">
-						<div class="panel-body">
-							<div class="panel panel-default">
-								<div class="panel-heading">Query</div>
-								<div class="panel-body">
-									<form id="formSearch" class="form-horizontal">
-										<div class="form-group" style="margin-top: 15px">
-											<label class="control-label col-sm-1"
-												for="txt_search_departmentname">Symbol</label>
-											<div class="col-sm-3">
-												<input type="text" class="form-control"
-													id="txt_search_symbol">
-											</div>
 
-											<div class="col-sm-4" style="text-align: left;">
-												<button type="button" style="margin-left: 50px"
-													id="btn_query" class="btn btn-primary" onclick="search();">Search</button>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-
-							<div id="toolbar" class="btn-group">
-						<button id="btn_edit" type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Update
-						</button>
-						<button id="btn_delete" type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancle
-						</button>
-					</div>
-							<table id="tb_departments"></table>
-						</div>
-					</div>
-				</div> -->
 			</li>
 		</ul>
 		<ol class="flex-control-nav flex-control-paging"></ol>
@@ -155,17 +122,15 @@
 			data-reactid=".0.3.0.0">
 
 			<p class="company-name" data-reactid=".0.3.0.0.2">
-				<span data-reactid=".0.3.0.0.2.0">TeamName © </span><span
-					data-reactid=".0.3.0.0.2.1">2017</span>
+				<span data-reactid=".0.3.0.0.2.0">Two Hours © </span><span
+					data-reactid=".0.3.0.0.2.1">2017 </span><span
+					data-reactid=".0.3.0.0.2.1">ShangHai</span>
 			</p>
 		</div>
 		<div class="clearfix visible-sm-block" data-reactid=".0.3.0.2"></div>
 		<div class="col-md-6 footer-about" data-reactid=".0.3.0.3"></div>
 	</div>
 	</footer>
-	<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-	<script src="/js/build-20170730.min.js"></script>
-	<!-- prettyPrint-->
 
 	<div id="lightboxOverlay" class="lightboxOverlay"
 		style="display: none;"></div>

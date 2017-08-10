@@ -30,7 +30,7 @@ function login() {
 			sessionStorage.setItem("traderId",map.traderId); 
 			sessionStorage.setItem("username",map.username); 
 
-			location.href = "newSubmit.jsp";
+			location.href = "newPortfolio.jsp";
 		}
 	});
 }

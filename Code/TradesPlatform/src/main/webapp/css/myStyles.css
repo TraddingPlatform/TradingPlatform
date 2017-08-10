@@ -26,9 +26,17 @@
 max-width: 100%;
   padding: 40px 40px;
   margin: 0 auto 25px;
-  margin-top: 50px;
+  margin-top: 80px;
   border-radius: 2px;
   background: rgba(248, 248, 248, 0.7);
   box-shadow: rgba(0, 0, 0, 0.0784314) 1px 3px 1px;
-  border: 1px solid #dbe3e7;	
+}
+
+.fixed-table-body{
+	  border: 0px !important;	
+	
+}
+
+#txt_search_symbol{
+	
 }
