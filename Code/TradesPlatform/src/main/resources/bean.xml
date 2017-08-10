@@ -80,4 +80,7 @@
     <bean id="selectTradeHistory" class="org.citi.training.TradingPlatform.controller.tradehistory.SelectTradeHistoryImp">
     	<property name="tradeHistoryOption" ref="tradeHistoryService"></property>
     </bean>
+    <bean id="selectTraderBook" class="org.citi.training.TradingPlatform.controller.getorderbook.GetOrderBookImp">
+    	<property name="orderBookOption" ref="orderBookService"></property>
+    </bean>
 </beans>

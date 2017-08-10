@@ -6,10 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-=======
 import java.sql.ResultSet;
 import java.sql.SQLException;
->>>>>>> 687f7c3596b4ed879672f2ebda82e05a3ec75499
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -21,13 +19,6 @@ public class OrderBookOptionImp implements OrderBookOption {
 
 	private JdbcTemplate jdbcTemplate;
 
-	public void setDataSource(DataSource dataSource) {
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
-	}
-
-	public void insertIntoOrderBook(OrderBook orderBook) {
-		StringBuilder sql = new StringBuilder(
-				"INSERT INTO `OrderBook` (`equity_symbol`, `quantity`, `is_buy`, `price`, `trader_id`) VALUES");
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
