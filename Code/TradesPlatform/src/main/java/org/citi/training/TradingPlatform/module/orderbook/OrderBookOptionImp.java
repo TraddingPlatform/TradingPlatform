@@ -15,7 +15,7 @@ public class OrderBookOptionImp implements OrderBookOption {
     }
     
     public void insertIntoOrderBook(OrderBook orderBook) {
-    	StringBuilder sql = new StringBuilder("INSERT INTO `OrderBook` (`equity_symbol`, `quantity`, `is_buy`, `price`) VALUES");
+    	StringBuilder sql = new StringBuilder("INSERT INTO `OrderBook` (`equity_symbol`, `quantity`, `is_buy`, `price`, `trader_id`) VALUES");
 		sql.append("(\'");
 		sql.append(orderBook.getEquitySymbol());
 		sql.append("\',");
@@ -24,6 +24,8 @@ public class OrderBookOptionImp implements OrderBookOption {
 		sql.append(orderBook.getIsBuy());
 		sql.append(",");
 		sql.append(orderBook.getPrice());
+		sql.append(",");
+		sql.append(orderBook.getTraderId());
 		sql.append(")");
     	jdbcTemplate.execute(sql.toString());
     }

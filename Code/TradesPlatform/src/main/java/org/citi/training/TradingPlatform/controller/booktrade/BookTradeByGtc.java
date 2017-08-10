@@ -8,16 +8,16 @@ import org.citi.training.TradingPlatform.module.orderbook.OrderBook;
 public class BookTradeByGtc extends BookTradeByGeneral {
 
 	@Override
-	protected List<OrderBook> getMatchOrderBookList(int quantity, double price, boolean isBuy)
+	protected List<OrderBook> getMatchOrderBookList(int quantity, double price, boolean isBuy, int traderId)
 			throws CloneNotSupportedException {
+		OrderBook remain = (OrderBook) orderBookList.get(0).clone();
 		if(isBuy)
-			deleteLowPrice(price);
-		else
 			deleteHightPrice(price);
+		else
+			deleteLowPrice(price);
 		
 		List<OrderBook> matchOrderBookList = new ArrayList<OrderBook>();
 		OrderBook orderBookTemp = null;
-		OrderBook remain = (OrderBook) orderBookList.get(0).clone();
 		while(true) {
 			orderBookTemp = getBestPrice(isBuy);
 			
@@ -26,6 +26,7 @@ public class BookTradeByGtc extends BookTradeByGeneral {
 				remain.setQuantity(quantity);
 				remain.setPrice(price);
 				remain.setIsBuy(isBuy?1:0);
+				remain.setTraderId(traderId);
 				orderBookOption.insertIntoOrderBook(remain);
 				break;
 			}

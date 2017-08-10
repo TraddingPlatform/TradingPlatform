@@ -28,7 +28,7 @@ public abstract class BookTradeByGeneral implements BookTrade {
 		orderBookList = orderBookOption.getOrderBookListBySymbol(equitySymbol, isBuy);
 		List<OrderBook> matchOrderBookList = null;
 		try {
-			matchOrderBookList = getMatchOrderBookList(quantity, price, isBuy);
+			matchOrderBookList = getMatchOrderBookList(quantity, price, isBuy,traderId);
 		} catch (CloneNotSupportedException e) {
 			e.printStackTrace();
 		}
@@ -45,7 +45,7 @@ public abstract class BookTradeByGeneral implements BookTrade {
 		return true;
 	}
 	
-	protected abstract List<OrderBook> getMatchOrderBookList(int quantity, double price, boolean isBuy) throws CloneNotSupportedException;
+	protected abstract List<OrderBook> getMatchOrderBookList(int quantity, double price, boolean isBuy, int traderId) throws CloneNotSupportedException;
 	
 	protected final OrderBook getBestPrice(boolean isBuy) {
 		double bestPrice = isBuy ? Double.MAX_VALUE : 0;
@@ -104,7 +104,7 @@ public abstract class BookTradeByGeneral implements BookTrade {
 		orderBookOption.modifyOrderBookQuantity(orderBook);
 	}
 	
-	protected void deleteHightPrice(double price) {
+	protected void deleteLowPrice(double price) {
 		Iterator<OrderBook> iterator = orderBookList.iterator();
 		while(iterator.hasNext()) {
 			if(iterator.next().getPrice() < price) {
@@ -113,7 +113,7 @@ public abstract class BookTradeByGeneral implements BookTrade {
 		}
 	}
 	
-	protected void deleteLowPrice(double price) {
+	protected void deleteHightPrice(double price) {
 		Iterator<OrderBook> iterator = orderBookList.iterator();
 		while(iterator.hasNext()) {
 			if(iterator.next().getPrice() > price) {
