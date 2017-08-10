@@ -67,21 +67,21 @@
 
 									<div class="col-sm-4" style="text-align: left;">
 										<button type="button" style="margin-left: 50px" id="btn_query"
-											class="btn btn-primary">Search</button>
+											class="btn btn-primary" onclick="search();">Search</button>
 									</div>
 								</div>
 							</form>
 						</div>
 					</div>
 
-					<div id="toolbar" class="btn-group">
+					<!-- <div id="toolbar" class="btn-group">
 						<button id="btn_edit" type="button" class="btn btn-default">
 							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Update
 						</button>
 						<button id="btn_delete" type="button" class="btn btn-default">
 							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancle
 						</button>
-					</div>
+					</div> -->
 					<table id="tb_departments"></table>
 				</div>
 				</div>
