@@ -79,7 +79,7 @@ public class TradeHistoryOptionImp implements TradeHistoryOption {
     public int getTradesTotalNums (int traderId)
     {
         // TODO Auto-generated method stub
-        List<Integer> elementNumberList = jdbcTemplate.query("SELECT COUNT(*) FROM tradehistory",new CountRowMapper());
+        List<Integer> elementNumberList = jdbcTemplate.query("SELECT COUNT(*) FROM tradehistory where trader_id=" + traderId, new CountRowMapper());
         int elementNumber = elementNumberList.get(0);
         return elementNumber;
     }
