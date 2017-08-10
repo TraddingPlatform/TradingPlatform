@@ -17,7 +17,23 @@ function checkField(val) {
  * 
  * }); });
  */
-function GetJsonData() {
+//function GetJsonData() {
+//	
+//	alert(json);
+//	return json;
+//}
+
+function alertObj(obj){
+	var output = "";
+	for(var i in obj){  
+		var property=obj[i];  
+		output+=i+" = "+property+"\n"; 
+	}  
+	alert(output);
+}
+
+function func() {
+	console.log("11");
 	var json = {
 		"equitySymbol" : $("#equitySymbol").val(),
 		"quantity" : $("#quantity").val(),
@@ -26,27 +42,15 @@ function GetJsonData() {
 		"tradeType" : $("#tradeType").val(),
 		"profit" : $("#profit").val(),
 		"loss" : $("#loss").val(),
-		"traderId": sessionStorage.getItem("traderId")
-
+		"traderId" : sessionStorage.getItem("traderId")
 	};
-	return json;
-}
-
-function func() {
-	console.log("11");
-	var equitySymbol = $("#equitySymbol").val();
-	var j = {
-		"equitySymbol" : equitySymbol
-	};
-	var data = '{"managerid": "4"}';
-	console.log(JSON.stringify(j));
-	/* alert(JSON.stringify(j)); */
+	alertObj(json);
 	$.ajax({
-		data : JSON.stringify(GetJsonData()),
+		data : JSON.stringify(json),
 		contentType : "text/html;charset=utf-8",
 		type : "POST",
 		dataType : "json",
-		url : "submit.spring",
+		url : "/TradesPlatform/submit.spring",
 		error : function(data) {
 			console.error("error:" + JSON.stringify(data));
 		},

@@ -246,7 +246,7 @@ html>body td {
 										<button id="submit-btn2"
 											class="btn btn-primary btn-block btn-lg btn-signin"
 											type="button" data-reactid=".0.1.0.0.2:0.0.1.0.0.$signin.1.4"
-											onclick="func()">Submit</button>
+											onclick="func();">Submit</button>
 
 									</form>
 								</div>
