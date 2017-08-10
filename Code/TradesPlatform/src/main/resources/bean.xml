@@ -48,7 +48,7 @@
     <bean id="tradeHistoryService" class="org.citi.training.TradingPlatform.module.tradehistory.TradeHistoryOptionImp">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
-
+    
     <bean id="orderBookService" class="org.citi.training.TradingPlatform.module.orderbook.OrderBookOptionImp">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
@@ -79,6 +79,10 @@
     
     <bean id="selectTradeHistory" class="org.citi.training.TradingPlatform.controller.tradehistory.SelectTradeHistoryImp">
     	<property name="tradeHistoryOption" ref="tradeHistoryService"></property>
+    </bean>
+    
+    <bean id="selectTraderBook" class="org.citi.training.TradingPlatform.controller.getorderbook.GetOrderBookImp">
+    		<property name="orderBookOption" ref="orderBookService"></property>
     </bean>
     
 </beans>

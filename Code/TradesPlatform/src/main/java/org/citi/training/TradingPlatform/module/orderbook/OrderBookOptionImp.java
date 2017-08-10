@@ -1,10 +1,13 @@
 package org.citi.training.TradingPlatform.module.orderbook;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 public class OrderBookOptionImp implements OrderBookOption {
 	
@@ -75,6 +78,25 @@ public class OrderBookOptionImp implements OrderBookOption {
 				+ traderId + "\"", new OrderBookRowMapper());
 		return list;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<OrderBook> getOrderBookListByTraderId(int limit, int offset, int traderId, String symbol) {
+		StringBuilder sql = new StringBuilder("SELECT * FROM orderbook WHERE trader_id = ");
+		sql.append(traderId);
+		sql.append(" ");
+		System.out.println(symbol.length());
+		if (symbol.length() != 0) {
+			sql.append(" AND equity_symbol = \'");
+			sql.append(symbol);
+			sql.append("\' ");
+		}
+		sql.append("LIMIT ");
+		sql.append(offset);
+		sql.append(", ");
+		sql.append(limit);
+		System.out.println(sql);
+		return jdbcTemplate.query(sql.toString(),new OrderBookRowMapper());
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<OrderBook> getOrderBookList(String symbol) {
@@ -82,4 +104,19 @@ public class OrderBookOptionImp implements OrderBookOption {
 		return list;
 	}
 	
+	@SuppressWarnings("rawtypes")
+	private class CountRowMapper implements RowMapper {
+		public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+			Integer count= rs.getInt("COUNT(*)");
+			return count;
+		}
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public int getOrderBookTotalNums (int traderId) {
+		List<Integer> elementNumberList = jdbcTemplate.query("SELECT COUNT(*) FROM orderbook where trader_id=" + traderId, new CountRowMapper());
+        int elementNumber = elementNumberList.get(0);
+        return elementNumber;
+	}
 }
