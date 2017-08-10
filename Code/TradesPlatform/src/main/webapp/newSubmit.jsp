@@ -122,8 +122,9 @@ html>body td {
 								<li><a href="/docs/user-guide">User Guide</a></li>
 								<li><a href="/docs/api-reference">REST API</a></li>
 							</ul></li> -->
-						<li><a href="newSubmit.jsp">OrderBook</a></li>
-						<li><a href="/blog">TradesDisplay</a></li>
+						<li><a href="newSubmit.jsp">Order Book</a></li>
+						<li><a href="orderhistory.jsp">Trades Display</a></li>
+						<li><a href="gtcorder.jsp">GTC Order</a></li>
 
 					</ul>
 					<div class="text-right">

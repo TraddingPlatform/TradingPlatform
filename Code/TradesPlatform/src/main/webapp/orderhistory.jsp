@@ -34,8 +34,8 @@
 						src="imgs/header-icon.png" class="logo"></a>
 					<ul class="menu">
 						<li><a href="newSubmit.jsp">Order Book</a></li>
-						<li><a href="/blog">Trades Display</a></li>
-
+						<li><a href="orderhistory.jsp">Trades Display</a></li>
+						<li><a href="gtcorder.jsp">GTC Order</a></li>
 					</ul>
 					<div class="text-right">
 						<ul class="social-links">
