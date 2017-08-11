@@ -26,9 +26,13 @@ public class TradeServer implements ServletContextListener {
 		symbolSet = new HashSet<String>();
 		symbolSet.add("ABT");
 		symbolSet.add("citi");
+		symbolSet.add("ABBV");
+		symbolSet.add("ACN");
 		currentPrice = new HashMap<String, Double>();
 		currentPrice.put("ABT", 40.56);
 		currentPrice.put("citi", 52.64);
+		currentPrice.put("ABBV", 32.98);
+		currentPrice.put("ACN", 63.78);
 		bookTrade = (BookTrade) ctx.getBean("bookTradeByGtc");
 	}
 	public TradeServer() {
@@ -64,7 +68,7 @@ public class TradeServer implements ServletContextListener {
 				bookTrade.bookTrade(randTraderId, randSymbol, randQuantity, formatPrice, isBuy);
 				System.out.println("BookTrade automatic success");
 				try {
-					Thread.sleep(2000);
+					Thread.sleep(3000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

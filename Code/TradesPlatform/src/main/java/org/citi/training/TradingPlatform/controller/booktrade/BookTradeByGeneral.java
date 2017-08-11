@@ -16,6 +16,7 @@ public abstract class BookTradeByGeneral implements BookTrade {
 	private TradeHistoryOption tradeHistoryOption;
 	protected OrderBookOption orderBookOption;
 	protected List<OrderBook> orderBookList;
+	protected String equitySymbol;
 	
 	public void setTradeHistoryOption(TradeHistoryOption tradeHistoryOption) {
 		this.tradeHistoryOption = tradeHistoryOption;
@@ -26,6 +27,7 @@ public abstract class BookTradeByGeneral implements BookTrade {
 	}
 	
 	public boolean bookTrade(int traderId, String equitySymbol, int quantity, double price, boolean isBuy) {
+		this.equitySymbol = equitySymbol;
 		orderBookList = orderBookOption.getOrderBookListBySymbol(equitySymbol, isBuy);
 		List<OrderBook> matchOrderBookList = null;
 		try {

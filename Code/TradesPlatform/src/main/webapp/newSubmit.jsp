@@ -107,6 +107,13 @@ th.specalt {
 html>body td {
 	font-size: 11px;
 }
+
+.symbol-table-container {
+	margin-top:150px;
+}
+.slides {
+	padding:0;margin:0;
+}
 </style>
 </head>
 <body>
@@ -152,7 +159,7 @@ html>body td {
 				</div>
 				<div class="container vertical-align">
 					<div class="row">
-						<div class="col-sm-12 text-center">
+						<div class="col-sm-12 text-center symbol-table-container">
 
 
 							<div class="col-md-6 phone-preview"

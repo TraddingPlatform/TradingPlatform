@@ -10,10 +10,9 @@ public class BookTradeByGtc extends BookTradeByGeneral {
 	@Override
 	protected List<OrderBook> getMatchOrderBookList(int quantity, double price, boolean isBuy, int traderId)
 			throws CloneNotSupportedException {
-		if(orderBookList.size() == 0) {
-			return null;
-		}
-		OrderBook remain = (OrderBook) orderBookList.get(0).clone();
+		
+		OrderBook remain = new OrderBook();
+		remain.setEquitySymbol(equitySymbol);
 		if(isBuy)
 			deleteHightPrice(price);
 		else
