@@ -57,7 +57,6 @@ function func() {
 		},
 		success : function(map) {
 			console.log(JSON.stringify(map));
-			alert(map.message);
-		}
+			alert(map.message);		}
 	});
 }

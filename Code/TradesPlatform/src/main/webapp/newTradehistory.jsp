@@ -4,8 +4,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Eventn | Node.js HTTP Microservices for ETL, Analytics
-	&amp; Data Processing</title>
+<title>SnowBall Trading Platform</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="css/build-20170702.min.css" rel="stylesheet" type="text/css"
 	media="all">

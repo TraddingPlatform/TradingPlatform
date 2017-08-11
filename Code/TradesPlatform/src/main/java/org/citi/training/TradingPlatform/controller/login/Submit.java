@@ -31,8 +31,6 @@ public class Submit {
     public String submit2(@RequestBody String j)throws IOException{
 
 	        JSONObject jo= JSONUtil.toJsonObject(j);
-
-	        System.out.println("submit json:"+jo);
 	        Map<String,Object> map=new HashMap<String, Object>();
 	    	ctx = new ClassPathXmlApplicationContext("bean.xml");
 	    	BookTrade bookTrade = (BookTrade) ctx.getBean("bookTradeBy"+jo.getString("tradeType"));
@@ -45,7 +43,7 @@ public class Submit {
 			boolean success = bookTrade.bookTrade(traderId, equitySymbol, quantity, price, isBuy);
 			
 	        map.put("message",success);
-	        
+
 	        return JSONUtil.toJsonString(map);
     }
 	

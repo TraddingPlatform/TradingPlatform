@@ -4,8 +4,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Eventn | Node.js HTTP Microservices for ETL, Analytics
-	&amp; Data Processing</title>
+<title>SnowBall Trading Platform</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="css/build-20170702.min.css" rel="stylesheet" type="text/css"
 	media="all">
@@ -31,6 +31,7 @@
 <script src="bootstrap-table-master/src/bootstrap-table.js"></script>
 <link href="bootstrap-table-master/src/bootstrap-table.css" rel="stylesheet" />
 <script src="js/gtcorder.js"></script>
+<script src="js/orderbook.js"></script>
 
 <!-- pretty print code-->
 </head>
