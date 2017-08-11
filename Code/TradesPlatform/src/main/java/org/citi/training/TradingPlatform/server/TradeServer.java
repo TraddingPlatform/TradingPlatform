@@ -43,28 +43,34 @@ public class TradeServer implements ServletContextListener {
 	}
 
 	public void contextInitialized(ServletContextEvent sce) {
-		Random rand = new Random();
-		
-		while(true) {
-			int randTraderId = rand.nextInt(2);
-			symbolArrays = new String[symbolSet.size()];
-			symbolSet.toArray(symbolArrays);
-			String randSymbol = symbolArrays[rand.nextInt(symbolSet.size())];
-			int randQuantity = rand.nextInt(200);
-			DecimalFormat df = new DecimalFormat("#.00");
-			double price = rand.nextDouble() - 0.5 + currentPrice.get(randSymbol);
-			double formatPrice = Double.parseDouble(df.format(price));
-			boolean isBuy = rand.nextInt(2)==1 ? true : false;
-			bookTrade.bookTrade(randTraderId, randSymbol, randQuantity, formatPrice, isBuy);
-			System.out.println("BookTrade automatic success");
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+		CreateTradeThread createTradeThread = new CreateTradeThread();
+		createTradeThread.start();
+	}
+	private class CreateTradeThread extends Thread {
+		@Override
+		public void run() {
+			Random rand = new Random();
+			
+			while(true) {
+				int randTraderId = rand.nextInt(2);
+				symbolArrays = new String[symbolSet.size()];
+				symbolSet.toArray(symbolArrays);
+				String randSymbol = symbolArrays[rand.nextInt(symbolSet.size())];
+				int randQuantity = rand.nextInt(200);
+				DecimalFormat df = new DecimalFormat("#.00");
+				double price = rand.nextDouble() - 0.5 + currentPrice.get(randSymbol);
+				double formatPrice = Double.parseDouble(df.format(price));
+				boolean isBuy = rand.nextInt(2)==1 ? true : false;
+				bookTrade.bookTrade(randTraderId, randSymbol, randQuantity, formatPrice, isBuy);
+				System.out.println("BookTrade automatic success");
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}
-
 	public void contextDestroyed(ServletContextEvent sce) {
 	}
 }
